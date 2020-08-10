@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "noImplicitAny": true,
+        "target": "es5",
+        "lib": [
+            "es5",
+            "es6",
+            "dom"
+        ],
+        "types": [ "node" ],
+        "jsx": "react",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "baseUrl": "./",
+        "paths": {
+            "components/*": [
+                "src/components/*"
+            ],
+            "styles/*": [
+                "src/styles/*"
+            ]
+        }
+    },
+    "include": [
+        "./src",
+        "./rsc"
+    ],
+    "exclude": [
+        "./dist/**/*"
+    ]
+}
