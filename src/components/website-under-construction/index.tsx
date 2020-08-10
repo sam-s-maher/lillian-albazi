@@ -9,8 +9,6 @@ import DefaultBackgroundImage from "images/default-background-image.png";
 
 const StyledDiv = Styled.div`
     ${css.centredFlexbox};
-    height: 95vh;
-    max-height: 100vh;
     width: 100%;
     background-color: ${styles.colours.theme.backgroundBase};
     color: ${styles.colours.theme.backgroundText};
