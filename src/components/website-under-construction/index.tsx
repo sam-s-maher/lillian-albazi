@@ -9,10 +9,14 @@ import DefaultBackgroundImage from "images/default-background-image.png";
 
 const StyledDiv = Styled.div`
     ${css.centredFlexbox};
-    height: 95vh;
+    min-height: 90vh;
     width: 100%;
     background-color: ${styles.colours.theme.backgroundBase};
     color: ${styles.colours.theme.backgroundText};
+`;
+
+const StyledArticleDiv = Styled.div`
+    padding: ${styles.padding.m} ${styles.padding.xs};
 `;
 
 const StyledContentDiv = Styled.div`
@@ -39,6 +43,7 @@ const StyledBlurredDiv = Styled.div`
     backdrop-filter: blur(3px);
     padding: ${styles.padding.m};
     border: solid white ${(props: IStyledBlurredDivProps) => props.borderSize};
+    text-align: center;
     p {
         font-size: ${styles.fontSize.large};
     }
@@ -62,21 +67,28 @@ const WebsiteUnderConstruction = (props: IWebsiteUnderConstructionProps) => {
     return (
         <StyledDiv>
             <StyledContentDiv>
-                <StyledBlurredDiv borderSize={"5px"}>
-                    <StyledHeadingDiv>
-                        <Heading text={"LILLIAN ALBAZI"} type={"h1"} style={"h1"} />
-                    </StyledHeadingDiv>
-                    <div>
-                        <Heading text={"Australian Jazz Musician"} type={"h2"} style={"h4"} />
-                    </div>
-                </StyledBlurredDiv>
-                <StyledBlurredDiv borderSize={"1px"}>
-                    <p>New Website Under Construction!</p>
-                </StyledBlurredDiv>
-                <StyledSocialsDiv borderSize={"1px"}>
-                    <SocialsList exclude={[SocialIcon.Bandcamp, SocialIcon.Spotify]}/>
-                </StyledSocialsDiv>
+                <StyledArticleDiv>
+                    <StyledBlurredDiv borderSize={"5px"}>
+                        <StyledHeadingDiv>
+                            <Heading text={"LILLIAN ALBAZI"} type={"h1"} style={"h1"} />
+                        </StyledHeadingDiv>
+                        <div>
+                            <Heading text={"Australian Jazz Musician"} type={"h2"} style={"h4"} />
+                        </div>
+                    </StyledBlurredDiv>
+                </StyledArticleDiv>
+                <StyledArticleDiv>
+                    <StyledBlurredDiv borderSize={"1px"}>
+                        <p>New Website Under Construction!</p>
+                    </StyledBlurredDiv>
+                </StyledArticleDiv>
+                <StyledArticleDiv>
+                    <StyledSocialsDiv borderSize={"1px"}>
+                        <SocialsList exclude={[SocialIcon.Bandcamp, SocialIcon.Spotify]}/>
+                    </StyledSocialsDiv>
+                </StyledArticleDiv>
             </StyledContentDiv>
+
         </StyledDiv>
     );
 }
