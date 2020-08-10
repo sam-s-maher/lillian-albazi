@@ -21,13 +21,34 @@ const config: Webpack.Configuration = {
             ".tsx",
             ".js",
             ".json"
-        ]
+        ],
+        alias: {
+            components: Path.resolve(__dirname, "./src/components/"),
+            styles: Path.resolve(__dirname, "./src/styles/"),
+            images: Path.resolve(__dirname, "./rsc/images/")
+        }
     },
     module: {
         rules: [
-            {
-                test: /\.tsx?$/,
+            { 
+                test: /\.tsx$/,
                 loader: "awesome-typescript-loader"
+            }, {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'fonts/'
+                        }
+                    }
+                ]
+            }, {
+                test: /\.(jpg|png)$/,
+                use: {
+                    loader: "url-loader"
+                }
             }
         ]
     },
