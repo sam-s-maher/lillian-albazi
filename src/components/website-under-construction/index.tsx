@@ -9,6 +9,7 @@ import DefaultBackgroundImage from "images/default-background-image.png";
 
 const StyledDiv = Styled.div`
     ${css.centredFlexbox};
+    height: 90vh;
     width: 100%;
     background-color: ${styles.colours.theme.backgroundBase};
     color: ${styles.colours.theme.backgroundText};
@@ -30,7 +31,7 @@ const StyledContentDiv = Styled.div`
     max-width: ${styles.mediaWidth.desktopWide};
     height: 100%;
     background-position: 50% 0;
-    justify-content: space-around;
+    justify-content: flex-start;
     padding: ${styles.padding.l} ${styles.padding.xxs};
 `;
 
