@@ -76,12 +76,14 @@ const SocialsList = (props: ISocialsListProps) => {
         <StyledSocialUl>
             {ShouldDisplayIcon(exclude, SocialIcon.Bandcamp) && (
                 <StyledSocialLi backgroundColour={styles.colours.base.bandcampBlue}>
-                    <StyledButtonDiv>
-                        <StyledImg
-                            src={BandcampIcon}
-                            alt="Bandcamp logo"
-                        />
-                    </StyledButtonDiv>
+                    <a>
+                        <StyledButtonDiv>
+                            <StyledImg
+                                src={BandcampIcon}
+                                alt="Bandcamp logo"
+                            />
+                        </StyledButtonDiv>
+                    </a>
                 </StyledSocialLi>
             )}
             {ShouldDisplayIcon(exclude, SocialIcon.Spotify) && (
@@ -96,12 +98,14 @@ const SocialsList = (props: ISocialsListProps) => {
             )}
             {ShouldDisplayIcon(exclude, SocialIcon.Youtube) && (
                 <StyledSocialLi backgroundColour={styles.colours.base.youtubeRed}>
-                    <StyledButtonDiv>
-                        <StyledImg
-                            src={YoutubeIcon}
-                            alt="Youtube logo"
-                        />
-                    </StyledButtonDiv>
+                    <a>
+                        <StyledButtonDiv>
+                            <StyledImg
+                                src={YoutubeIcon}
+                                alt="Youtube logo"
+                            />
+                        </StyledButtonDiv>
+                    </a>
                 </StyledSocialLi>
             )}
             {ShouldDisplayIcon(exclude, SocialIcon.Facebook) && (
@@ -128,15 +132,15 @@ const SocialsList = (props: ISocialsListProps) => {
                 <StyledSocialLi backgroundColour={styles.colours.base.white}>
                     <StyledButtonDiv>
                         <StyledEmailIcon icon={faEnvelope} size="2x"/>
-                        {/* <StyledImg
-                            src={InstagramIcon}
-                            alt="Instagram logo"
-                        /> */}
                     </StyledButtonDiv>
                 </StyledSocialLi>
             )}
         </StyledSocialUl>
     );
+}
+
+function GetOnClick(href: string): Function {
+    return () => {};
 }
 
 export default SocialsList;
