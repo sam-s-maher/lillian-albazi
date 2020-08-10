@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faEnvelope
 } from "@fortawesome/free-solid-svg-icons";
+import { SocialsUrls } from "./socials-urls";
 
 const StyledSocialUl = Styled.ul`
     ${css.centredFlexbox};
@@ -33,7 +34,6 @@ const StyledSocialLi = Styled.li`
     margin: 0 ${styles.padding.xxxs};
     background-color: ${(props: IStyledSocialLi) => props.backgroundColour};
     border-radius: 8px;
-    cursor: pointer;
     &:hover div {
         width: 36px;
         height: 36px;
@@ -49,6 +49,13 @@ const StyledButtonDiv = Styled.div`
 
 const StyledEmailIcon = Styled(FontAwesomeIcon)`
     color: ${styles.colours.base.black};
+`;
+
+const StyledA = Styled.a`
+    ${css.centredFlexbox};
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 `;
 
 export const enum SocialIcon {
@@ -76,71 +83,75 @@ const SocialsList = (props: ISocialsListProps) => {
         <StyledSocialUl>
             {ShouldDisplayIcon(exclude, SocialIcon.Bandcamp) && (
                 <StyledSocialLi backgroundColour={styles.colours.base.bandcampBlue}>
-                    <a>
+                    <StyledA href={SocialsUrls.Websites.Bandcamp} target="_blank">
                         <StyledButtonDiv>
                             <StyledImg
                                 src={BandcampIcon}
                                 alt="Bandcamp logo"
                             />
                         </StyledButtonDiv>
-                    </a>
+                    </StyledA>
                 </StyledSocialLi>
             )}
             {ShouldDisplayIcon(exclude, SocialIcon.Spotify) && (
                 <StyledSocialLi backgroundColour={styles.colours.base.spotifyGreen}>
-                    <StyledButtonDiv>
-                        <StyledImg
-                            src={SpotifyIcon}
-                            alt="Spotify logo"
-                        />
-                    </StyledButtonDiv>
+                    <StyledA href={SocialsUrls.Websites.Spotify} target="_blank">
+                        <StyledButtonDiv>
+                            <StyledImg
+                                src={SpotifyIcon}
+                                alt="Spotify logo"
+                            />
+                        </StyledButtonDiv>
+                    </StyledA>
                 </StyledSocialLi>
             )}
             {ShouldDisplayIcon(exclude, SocialIcon.Youtube) && (
                 <StyledSocialLi backgroundColour={styles.colours.base.youtubeRed}>
-                    <a>
+                    <StyledA href={SocialsUrls.Websites.Youtube} target="_blank">
                         <StyledButtonDiv>
                             <StyledImg
                                 src={YoutubeIcon}
                                 alt="Youtube logo"
                             />
                         </StyledButtonDiv>
-                    </a>
+                    </StyledA>
                 </StyledSocialLi>
             )}
             {ShouldDisplayIcon(exclude, SocialIcon.Facebook) && (
                 <StyledSocialLi backgroundColour={styles.colours.base.facebookBlue}>
-                    <StyledButtonDiv>
-                        <StyledImg
-                            src={FacebookIcon}
-                            alt="Facebook logo"
-                        />
-                    </StyledButtonDiv>
+                    <StyledA href={SocialsUrls.Websites.Facebook} target="_blank">
+                        <StyledButtonDiv>
+                            <StyledImg
+                                src={FacebookIcon}
+                                alt="Facebook logo"
+                            />
+                        </StyledButtonDiv>
+                    </StyledA>
                 </StyledSocialLi>
             )}
             {ShouldDisplayIcon(exclude, SocialIcon.Instagram) && (
                 <StyledSocialLi backgroundColour={styles.colours.base.instagramPink}>
-                    <StyledButtonDiv>
-                        <StyledImg
-                            src={InstagramIcon}
-                            alt="Instagram logo"
-                        />
-                    </StyledButtonDiv>
+                    <StyledA href={SocialsUrls.Websites.Instagram} target="_blank">
+                        <StyledButtonDiv>
+                            <StyledImg
+                                src={InstagramIcon}
+                                alt="Instagram logo"
+                            />
+                        </StyledButtonDiv>
+                    </StyledA>
                 </StyledSocialLi>
             )}
             {ShouldDisplayIcon(exclude, SocialIcon.Email) && (
                 <StyledSocialLi backgroundColour={styles.colours.base.white}>
-                    <StyledButtonDiv>
-                        <StyledEmailIcon icon={faEnvelope} size="2x"/>
-                    </StyledButtonDiv>
+                    <StyledA href={"mailto:" + SocialsUrls.Email} target="_blank">
+                        <StyledButtonDiv>
+                            <StyledEmailIcon icon={faEnvelope} size="2x"/>
+                        </StyledButtonDiv>
+                    </StyledA>
                 </StyledSocialLi>
             )}
         </StyledSocialUl>
     );
-}
-
-function GetOnClick(href: string): Function {
-    return () => {};
 }
 
 export default SocialsList;
