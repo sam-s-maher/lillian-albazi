@@ -18,6 +18,9 @@ const StyledDiv = Styled.div`
 
 const StyledArticleDiv = Styled.div`
     padding: ${styles.padding.m} ${styles.padding.xs};
+    @media only screen and (max-width: ${styles.mediaWidth.phone}) {
+        padding: ${styles.padding.xs};
+    }
 `;
 
 const StyledContentDiv = Styled.div`
@@ -47,6 +50,9 @@ const StyledBlurredDiv = Styled.div`
     text-align: center;
     p {
         font-size: ${styles.fontSize.large};
+    }
+    @media only screen and (max-width: ${styles.mediaWidth.phone}) {
+        padding: ${styles.padding.m} ${styles.padding.xs};
     }
 `;
 
@@ -89,7 +95,6 @@ const WebsiteUnderConstruction = (props: IWebsiteUnderConstructionProps) => {
                     </StyledSocialsDiv>
                 </StyledArticleDiv>
             </StyledContentDiv>
-
         </StyledDiv>
     );
 }
