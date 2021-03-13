@@ -5,26 +5,25 @@ const base = {
     cream: "#F1E7DB",
     offWhite: "#FAFAFA",
     grey: "#2D2D2D",
+    orange: "#AD521E",
     bandcampTeal: "#1DA2C2",
     bandcampBlue: "#61929C",
     spotifyGreen: "#1DB954",
     youtubeRed: "#FF0000",
     instagramPink: "#F00075",
     facebookBlue: "#3B5998",
-    fff: "#2A4141" // TODO
 };
 
 const theme = {
-    primaryBase: base.fff,
+    primaryBase: base.black,  
     primaryText: base.offWhite,
-    // primaryBase: base.teal,  // TODO
-    // primaryText: base.offWhite,
+    primaryHighlight: base.orange,
     secondaryBase: base.cream,
     secondaryText: base.black,
-    tertiaryBase: base.grey,
+    tertiaryBase: base.black,
     tertiaryText: base.offWhite,
     backgroundBase: base.black,
-    backgroundText: base.white
+    backgroundText: base.offWhite
 };
 
 export const colours = {

@@ -15,7 +15,6 @@ const StyledHeaderDiv = Styled.div`
     ${css.centredFlexbox};
     height: 4vh;
     min-height: 40px;
-    font-family: ${styles.fontFamily.roboto};
     color: ${styles.colours.theme.primaryText};
     background-color: ${styles.colours.theme.tertiaryBase};
     padding: 0 ${styles.padding.xxs};

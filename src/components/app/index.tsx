@@ -1,25 +1,21 @@
 import React from "react";
 
-import WebsiteUnderConstruction from "components/website-under-construction";
-// import Header from "components/header";
-// import Banner from "components/banner";
-// import AlbumFeature from "components/album-feature";
-// import GigList from "components/gig-list";
-// import Contact from "components/contact";
-// import Friends from "components/friends";
+import Header from "components/header";
+import AlbumCta from "components/album-cta";
+import GigList from "components/gig-list";
+import Contact from "components/contact";
+import Friends from "components/friends";
 
 export interface IAppProps {}
 
 const App = (props: IAppProps) => {
     return (
         <div>
-            <WebsiteUnderConstruction />
-            {/* <Header />
-            <Banner />
-            <AlbumFeature />
+            <Header />
+            <AlbumCta />
             <GigList />
             <Contact />
-            <Friends /> */}
+            <Friends />
         </div>
     );
 }

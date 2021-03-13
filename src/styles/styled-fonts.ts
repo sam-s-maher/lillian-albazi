@@ -22,9 +22,9 @@ export const StyledFonts = createGlobalStyle`
     }
 
     @font-face {
-        font-family: ${styles.fontFamily.roboto};
-        src: local(${styles.fontFamily.roboto}),
-        url(${fontFilePath}/roboto/Roboto-Regular.ttf) format('truetype');
+        font-family: ${styles.fontFamily.scheherazade};
+        src: local(${styles.fontFamily.scheherazade}),
+        url(${fontFilePath}/scheheradaze/Scheheradaze-Regular.ttf) format('truetype');
         font-weight: ${styles.fontWeight.regular};
         font-style: normal;
     }

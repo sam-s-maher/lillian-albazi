@@ -43,7 +43,6 @@ const Contact = (props: IContactProps) => {
             </EmailDiv>
             <StyledHeadingDiv>
                 <Heading text={"Social"} type={"h3"} style={"h3"} />
-                {/* <p>Or </p><Heading text={"reach me"} type={"h4"} style={"h4"}/><p> through...</p> */}
             </StyledHeadingDiv>
             <SocialsListDiv>
                 <SocialsList />
