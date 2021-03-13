@@ -7,15 +7,12 @@ import StyledImg from "styles/styled-components/styled-img";
 
 import BandcampIcon from "images/bandcamp-icon-dark-32.png";
 import SpotifyIcon from "images/spotify-icon-white-32.png";
-// import FacebookIcon from "images/facebook-icon-white-32.png";
-// import InstagramIcon from "images/instagram-icon-white-32.png";
-// import YoutubeIcon from "images/youtube-icon-white-32.png";
 
 const StyledHeaderDiv = Styled.div`
     ${css.centredFlexbox};
     height: 4vh;
     min-height: 40px;
-    color: ${styles.colours.theme.primaryText};
+    color: ${styles.colours.theme.tertiaryText};
     background-color: ${styles.colours.theme.tertiaryBase};
     padding: 0 ${styles.padding.xxs};
 `;
@@ -34,12 +31,22 @@ const StyledUl = Styled.ul`
 `;
 
 const StyledLi = Styled.li`
+
+`;
+
+const StyledLink = Styled.a`
     padding: 0 ${styles.padding.s};
+    cursor: pointer;
+    transition: color ${styles.transitionTime.fastest};
+    &:hover {
+        color: ${styles.colours.theme.primaryHighlight};
+    }
 `;
 
 const StyledIconImgLi = Styled.li`
     ${css.centredFlexbox};
     padding: 0 ${styles.padding.xxxs};
+    cursor: pointer;
 `;
 
 const StyledIconImg = Styled(StyledImg)`
@@ -56,9 +63,9 @@ const Header = (props: IHeaderProps) => {
                 <div>
                     <nav>
                         <StyledUl>
-                            <StyledLi>Listen</StyledLi>
-                            <StyledLi>Gigs</StyledLi>
-                            <StyledLi>Contact</StyledLi>
+                            <li><StyledLink href="#album">Listen</StyledLink></li>
+                            <li><StyledLink href="#gigs">Gigs</StyledLink></li>
+                            <li><StyledLink href="#contact">Contact</StyledLink></li>
                         </StyledUl>
                     </nav>
                 </div>

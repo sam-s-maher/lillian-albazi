@@ -8,12 +8,7 @@ import Heading from "components/heading";
 const StyledFriendsDiv = Styled.div`
     ${css.centredFlexbox};
     padding: ${styles.padding.xs} 0 0;
-    background-color: ${styles.colours.theme.backgroundBase};
     color: ${styles.colours.theme.backgroundText};
-`;
-
-const StyledHeadingDiv = Styled.div`
-    ${css.centredFlexbox};
 `;
 
 const FriendsUl = Styled.ul`
@@ -22,7 +17,7 @@ const FriendsUl = Styled.ul`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center; 
-    max-width: 10%;
+    max-width: 80%;
 `;
 
 const FriendsLi = Styled.li`

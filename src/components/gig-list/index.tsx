@@ -3,13 +3,12 @@ import Styled from "styled-components";
 
 import { styles } from "styles/variables";
 import { css } from "styles/styled-css";
-import Heading from "components/heading";
 import GigListItem from "components/gig-list-item";
 import GigListItemHeader from "components/gig-list-item-header";
 
 const StyledGigListDiv = Styled.div`
     ${css.centredFlexbox};
-    padding: ${styles.padding.xl} ${styles.padding.xs} ${styles.padding.xl};
+    padding: ${styles.padding.xxxl} ${styles.padding.xs};
     background-color: ${styles.colours.theme.secondaryBase};
     color: ${styles.colours.theme.secondaryText};
 `;
@@ -21,11 +20,15 @@ const StyledListDiv = Styled.div`
     padding: ${styles.padding.s} 0;
 `;
 
-interface IGigListProps {}
+interface IGigListProps {
+    id?: string;
+}
 
 const GigList = (props: IGigListProps) => {
+    const { id } = props;
+
     return (
-        <StyledGigListDiv>
+        <StyledGigListDiv id={id}>
             <StyledListDiv>
                 <GigListItemHeader />
                 <GigListItem

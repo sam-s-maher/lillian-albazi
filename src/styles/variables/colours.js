@@ -21,7 +21,7 @@ const theme = {
     secondaryBase: base.cream,
     secondaryText: base.black,
     tertiaryBase: base.black,
-    tertiaryText: base.offWhite,
+    tertiaryText: base.white,
     backgroundBase: base.black,
     backgroundText: base.offWhite
 };

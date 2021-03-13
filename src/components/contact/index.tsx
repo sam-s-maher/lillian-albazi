@@ -5,36 +5,42 @@ import { css } from "styles/styled-css";
 import { styles } from "styles/variables";
 import Heading from "components/heading";
 import SocialsList from "components/socials-list";
+import Friends from "components/friends";
 
 const StyledContactDiv = Styled.div`
     ${css.centredFlexbox};
-    padding: ${styles.padding.m} 0 0;
-    background-color: ${styles.colours.theme.backgroundBase};
+    padding: ${styles.padding.xxxl} 0 ${styles.padding.l};
+    background: ${styles.colours.theme.primaryBase} url("../rsc/images/contact-background-960.jpg") no-repeat center;
+    background-size: cover;
     color: ${styles.colours.theme.backgroundText};
 `;
 
 const EmailDiv = Styled.div`
-    padding: ${styles.padding.s} 0;
+    padding: ${styles.padding.m} 0;
 `;
 
 const StyledHeadingDiv = Styled.div`
     ${css.centredFlexbox};
     flex-direction: row;
-    padding: ${styles.padding.s} 0 0;
+    padding: ${styles.padding.m} 0 0;
     p {
         white-space: pre;
     }
 `;
 
 const SocialsListDiv = Styled.div`
-    padding: ${styles.padding.xs} 0;
+    padding: ${styles.padding.m} 0;
 `;
 
-interface IContactProps {}
+interface IContactProps {
+    id?: string;
+}
 
 const Contact = (props: IContactProps) => {
+    const { id } = props;
+
     return (
-        <StyledContactDiv>
+        <StyledContactDiv id={id}>
             <div>
                 <Heading text={"Bookings"} type={"h3"} style={"h3"}/>
             </div>
@@ -47,6 +53,7 @@ const Contact = (props: IContactProps) => {
             <SocialsListDiv>
                 <SocialsList />
             </SocialsListDiv>
+            <Friends />
         </StyledContactDiv>
     )
 };

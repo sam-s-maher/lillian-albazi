@@ -48,7 +48,14 @@ const StyledItemContentDiv = Styled.div`
 `;
 
 const StyledItemButtonDiv = Styled(StyledItemContentDiv)`
-    padding: ${styles.padding.xxs} ${styles.padding.s};
+    ${css.centredFlexbox}
+    min-height: 50px;
+    min-width: 70px;
+    cursor: pointer;
+    transition: font-size ${styles.transitionTime.fastest};
+    &:hover {
+        font-size: 110%;
+    }
 `;
 
 const StyledHrDiv = Styled.div`
@@ -96,9 +103,9 @@ const GigListItem = (props: IGigListItemProps) => {
                 </StyledItemDiv>
                 <StyledItemDiv justifyContent={"flex-end"}>
                     <StyledItemButtonDiv
-                        colour={styles.colours.theme.backgroundText}
+                        colour={styles.colours.theme.tertiaryText}
                         backgroundColour={styles.colours.theme.tertiaryBase}>
-                        <p>{buttonTextToDisplay}</p>
+                        {buttonTextToDisplay}
                     </StyledItemButtonDiv>
                 </StyledItemDiv>
             </StyledItemInfoDiv>

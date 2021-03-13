@@ -4,7 +4,7 @@ import Header from "components/header";
 import AlbumCta from "components/album-cta";
 import GigList from "components/gig-list";
 import Contact from "components/contact";
-import Friends from "components/friends";
+import FooterTag from "components/footer-tag";
 
 export interface IAppProps {}
 
@@ -12,10 +12,10 @@ const App = (props: IAppProps) => {
     return (
         <div>
             <Header />
-            <AlbumCta />
-            <GigList />
-            <Contact />
-            <Friends />
+            <AlbumCta id="album"/>
+            <GigList id="gigs"/>
+            <Contact id="contact"/>
+            <FooterTag />
         </div>
     );
 }

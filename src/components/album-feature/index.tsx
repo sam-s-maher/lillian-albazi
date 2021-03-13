@@ -8,12 +8,10 @@ import AlbumArt from "images/album-art-512.png";
 
 const StyledAlbumFeatureDiv = Styled.div`
     ${css.centredFlexbox};
-    padding: ${styles.padding.m} 0;
     color: ${styles.colours.theme.primaryText};
 `;
 
 const StyledAlbumDiv = Styled.div`
-    padding: ${styles.padding.xs};
 `;
 
 const StyledAlbumImg = Styled(StyledImg)`
