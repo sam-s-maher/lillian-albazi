@@ -20,7 +20,8 @@ const config: Webpack.Configuration = {
         alias: {
             components: Path.resolve(__dirname, "./src/components/"),
             styles: Path.resolve(__dirname, "./src/styles/"),
-            images: Path.resolve(__dirname, "./rsc/images/")
+            images: Path.resolve(__dirname, "./rsc/images/"),
+            fonts: Path.resolve(__dirname, "./rsc/fonts/")
         }
     },
     module: {

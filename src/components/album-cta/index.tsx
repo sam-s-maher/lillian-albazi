@@ -11,7 +11,7 @@ import BackgroundImage from "images/background-image-2560.jpg";
 const StyledWrapperDiv = Styled.div`
     ${css.centredFlexbox};
     justify-content: space-around; 
-    background: ${styles.colours.theme.primaryBase} url("../rsc/images/background-image-2560.jpg") no-repeat center;
+    background: ${styles.colours.theme.primaryBase} url(${BackgroundImage}) no-repeat center;
     background-size: cover;
     padding: 14vh 0 12vh;
     height: 70vh;
