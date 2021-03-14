@@ -25,7 +25,8 @@
     },
     "include": [
         "./src",
-        "./rsc"
+        "./rsc",
+        "./typings"
     ],
     "exclude": [
         "./dist/**/*"

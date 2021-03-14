@@ -1,5 +1,5 @@
 import React from "react";
-import Styled, { css } from "styled-components";
+import Styled, { FlattenSimpleInterpolation, css } from "styled-components";
 
 import { styles } from "styles/variables"; 
 
@@ -17,12 +17,22 @@ interface IHeadingProps {
 const Heading = (props: IHeadingProps) => {
     const { className, text, type, style, fontFamily } = props;
 
-    const HeadingElement = GetStyledHeadingComponent(type, style, fontFamily);
+    const HeadingElement = GetStyledHeadingComponent(className, type, style, fontFamily);
     
-    return <HeadingElement className={className}>{text}</HeadingElement>;
+    return HeadingElement(text);
 }
 
+interface IStyledHeadingProps {
+    css: FlattenSimpleInterpolation;
+}
+
+const StyledH1 = Styled.h1`${(props: IStyledHeadingProps) => props.css};`;
+const StyledH2 = Styled.h2`${(props: IStyledHeadingProps) => props.css};`;
+const StyledH3 = Styled.h3`${(props: IStyledHeadingProps) => props.css};`;
+const StyledH4 = Styled.h4`${(props: IStyledHeadingProps) => props.css};`;
+
 function GetStyledHeadingComponent(
+    className: string,
     headingElementType: HeadingType,
     headingStyleType: HeadingType,
     fontFamily?: FontFamily) {
@@ -55,13 +65,13 @@ function GetStyledHeadingComponent(
 
     switch(headingElementType) {
         case 'h1':
-            return Styled.h1`${headingCss}`;
+            return (text: string) => <StyledH1 className={className} css={headingCss}>{text}</StyledH1>;
         case 'h2':
-            return Styled.h2`${headingCss}`;
+            return (text: string) => <StyledH2 className={className} css={headingCss}>{text}</StyledH2>;
         case 'h3':
-            return Styled.h3`${headingCss}`;
+            return (text: string) => <StyledH3 className={className} css={headingCss}>{text}</StyledH3>;
         case 'h4':
-            return Styled.h4`${headingCss}`;
+            return (text: string) => <StyledH4 className={className} css={headingCss}>{text}</StyledH4>;
     }
 }
 
