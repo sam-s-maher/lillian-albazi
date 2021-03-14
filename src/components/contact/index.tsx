@@ -6,11 +6,12 @@ import { styles } from "styles/variables";
 import Heading from "components/heading";
 import SocialsList from "components/socials-list";
 import { SocialsUrls } from "components/socials-list/socials-urls";
+import ContactBackground from "images/contact-background-960.jpg";
 
 const StyledContactBackgroundDiv = Styled.div`
     ${css.centredFlexbox};
     padding: ${styles.padding.xxxl} 0 ${styles.padding.l};
-    background: ${styles.colours.theme.primaryBase} url("../rsc/images/contact-background-960.jpg") no-repeat center;
+    background: ${styles.colours.theme.primaryBase} url(${ContactBackground}) no-repeat center;
     color: ${styles.colours.theme.backgroundText};
     background-size: cover;
 `;

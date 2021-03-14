@@ -6,7 +6,7 @@ import { css } from "styles/styled-css";
 import Heading from "components/heading";
 import AlbumFeature from "components/album-feature";
 import CtaButton from "components/cta-button";
-
+import BackgroundImage from "images/background-image-2560.jpg";
 
 const StyledWrapperDiv = Styled.div`
     ${css.centredFlexbox};
