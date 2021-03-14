@@ -15,12 +15,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { SocialsUrls } from "./socials-urls";
 
+const StyledSocialsDiv = Styled.div`
+    ${css.centredFlexbox}
+`;
+
 const StyledSocialUl = Styled.ul`
     ${css.centredFlexbox};
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
 `;
 
 interface IStyledSocialLi {
@@ -31,7 +33,7 @@ const StyledSocialLi = Styled.li`
     ${css.centredFlexbox};
     width: 48px;
     height: 48px;
-    margin: 0 ${styles.padding.xxxs};
+    margin: ${styles.padding.xxxs};
     background-color: ${(props: IStyledSocialLi) => props.backgroundColour};
     border-radius: 8px;
     &:hover div {
@@ -80,77 +82,79 @@ const SocialsList = (props: ISocialsListProps) => {
     const { exclude } = props;
 
     return (
-        <StyledSocialUl>
-            {ShouldDisplayIcon(exclude, SocialIcon.Bandcamp) && (
-                <StyledSocialLi backgroundColour={styles.colours.base.bandcampBlue}>
-                    <StyledA href={SocialsUrls.Websites.Bandcamp} target="_blank">
-                        <StyledButtonDiv>
-                            <StyledImg
-                                src={BandcampIcon}
-                                alt="Bandcamp logo"
-                            />
-                        </StyledButtonDiv>
-                    </StyledA>
-                </StyledSocialLi>
-            )}
-            {ShouldDisplayIcon(exclude, SocialIcon.Spotify) && (
-                <StyledSocialLi backgroundColour={styles.colours.base.spotifyGreen}>
-                    <StyledA href={SocialsUrls.Websites.Spotify} target="_blank">
-                        <StyledButtonDiv>
-                            <StyledImg
-                                src={SpotifyIcon}
-                                alt="Spotify logo"
-                            />
-                        </StyledButtonDiv>
-                    </StyledA>
-                </StyledSocialLi>
-            )}
-            {ShouldDisplayIcon(exclude, SocialIcon.Youtube) && (
-                <StyledSocialLi backgroundColour={styles.colours.base.youtubeRed}>
-                    <StyledA href={SocialsUrls.Websites.Youtube} target="_blank">
-                        <StyledButtonDiv>
-                            <StyledImg
-                                src={YoutubeIcon}
-                                alt="Youtube logo"
-                            />
-                        </StyledButtonDiv>
-                    </StyledA>
-                </StyledSocialLi>
-            )}
-            {ShouldDisplayIcon(exclude, SocialIcon.Facebook) && (
-                <StyledSocialLi backgroundColour={styles.colours.base.facebookBlue}>
-                    <StyledA href={SocialsUrls.Websites.Facebook} target="_blank">
-                        <StyledButtonDiv>
-                            <StyledImg
-                                src={FacebookIcon}
-                                alt="Facebook logo"
-                            />
-                        </StyledButtonDiv>
-                    </StyledA>
-                </StyledSocialLi>
-            )}
-            {ShouldDisplayIcon(exclude, SocialIcon.Instagram) && (
-                <StyledSocialLi backgroundColour={styles.colours.base.instagramPink}>
-                    <StyledA href={SocialsUrls.Websites.Instagram} target="_blank">
-                        <StyledButtonDiv>
-                            <StyledImg
-                                src={InstagramIcon}
-                                alt="Instagram logo"
-                            />
-                        </StyledButtonDiv>
-                    </StyledA>
-                </StyledSocialLi>
-            )}
-            {ShouldDisplayIcon(exclude, SocialIcon.Email) && (
-                <StyledSocialLi backgroundColour={styles.colours.base.white}>
-                    <StyledA href={"mailto:" + SocialsUrls.Email} target="_blank">
-                        <StyledButtonDiv>
-                            <StyledEmailIcon icon={faEnvelope} size="2x"/>
-                        </StyledButtonDiv>
-                    </StyledA>
-                </StyledSocialLi>
-            )}
-        </StyledSocialUl>
+        <StyledSocialsDiv>
+            <StyledSocialUl>
+                {ShouldDisplayIcon(exclude, SocialIcon.Bandcamp) && (
+                    <StyledSocialLi backgroundColour={styles.colours.base.bandcampBlue}>
+                        <StyledA href={SocialsUrls.Websites.Bandcamp} target="_blank">
+                            <StyledButtonDiv>
+                                <StyledImg
+                                    src={BandcampIcon}
+                                    alt="Bandcamp logo"
+                                />
+                            </StyledButtonDiv>
+                        </StyledA>
+                    </StyledSocialLi>
+                )}
+                {ShouldDisplayIcon(exclude, SocialIcon.Spotify) && (
+                    <StyledSocialLi backgroundColour={styles.colours.base.spotifyGreen}>
+                        <StyledA href={SocialsUrls.Websites.Spotify} target="_blank">
+                            <StyledButtonDiv>
+                                <StyledImg
+                                    src={SpotifyIcon}
+                                    alt="Spotify logo"
+                                />
+                            </StyledButtonDiv>
+                        </StyledA>
+                    </StyledSocialLi>
+                )}
+                {ShouldDisplayIcon(exclude, SocialIcon.Youtube) && (
+                    <StyledSocialLi backgroundColour={styles.colours.base.youtubeRed}>
+                        <StyledA href={SocialsUrls.Websites.Youtube} target="_blank">
+                            <StyledButtonDiv>
+                                <StyledImg
+                                    src={YoutubeIcon}
+                                    alt="Youtube logo"
+                                />
+                            </StyledButtonDiv>
+                        </StyledA>
+                    </StyledSocialLi>
+                )}
+                {ShouldDisplayIcon(exclude, SocialIcon.Facebook) && (
+                    <StyledSocialLi backgroundColour={styles.colours.base.facebookBlue}>
+                        <StyledA href={SocialsUrls.Websites.Facebook} target="_blank">
+                            <StyledButtonDiv>
+                                <StyledImg
+                                    src={FacebookIcon}
+                                    alt="Facebook logo"
+                                />
+                            </StyledButtonDiv>
+                        </StyledA>
+                    </StyledSocialLi>
+                )}
+                {ShouldDisplayIcon(exclude, SocialIcon.Instagram) && (
+                    <StyledSocialLi backgroundColour={styles.colours.base.instagramPink}>
+                        <StyledA href={SocialsUrls.Websites.Instagram} target="_blank">
+                            <StyledButtonDiv>
+                                <StyledImg
+                                    src={InstagramIcon}
+                                    alt="Instagram logo"
+                                />
+                            </StyledButtonDiv>
+                        </StyledA>
+                    </StyledSocialLi>
+                )}
+                {ShouldDisplayIcon(exclude, SocialIcon.Email) && (
+                    <StyledSocialLi backgroundColour={styles.colours.base.white}>
+                        <StyledA href={"mailto:" + SocialsUrls.Email} target="_blank">
+                            <StyledButtonDiv>
+                                <StyledEmailIcon icon={faEnvelope} size="2x"/>
+                            </StyledButtonDiv>
+                        </StyledA>
+                    </StyledSocialLi>
+                )}
+            </StyledSocialUl>
+        </StyledSocialsDiv>
     );
 }
 

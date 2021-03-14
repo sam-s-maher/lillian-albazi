@@ -13,7 +13,6 @@ const StyledFriendsDiv = Styled.div`
 
 const FriendsUl = Styled.ul`
     ${css.centredFlexbox};
-    padding: ${styles.padding.s} 0;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center; 
