@@ -30,10 +30,6 @@ const StyledUl = Styled.ul`
     flex-flow: row nowrap;
 `;
 
-const StyledLi = Styled.li`
-
-`;
-
 const StyledLink = Styled.a`
     padding: 0 ${styles.padding.s};
     cursor: pointer;
@@ -84,24 +80,6 @@ const Header = (props: IHeaderProps) => {
                                     alt="Spotify logo"
                                 />
                             </StyledIconImgLi>
-                            {/* <StyledIconImgLi>
-                                <StyledIconImg
-                                    src={YoutubeIcon}
-                                    alt="Youtube logo"
-                                />
-                            </StyledIconImgLi>
-                            <StyledIconImgLi>
-                                <StyledIconImg
-                                    src={FacebookIcon}
-                                    alt="Facebook logo"
-                                />
-                            </StyledIconImgLi>
-                            <StyledIconImgLi>
-                                <StyledIconImg
-                                    src={InstagramIcon}
-                                    alt="Instagram logo"
-                                />
-                            </StyledIconImgLi> */}
                         </StyledUl>
                     </nav>
                 </div>
