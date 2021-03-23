@@ -72,6 +72,7 @@ const StyledHr = Styled.hr`
 interface IGigListItemProps {
     date: string;
     text: string;
+    url: string;
     buttonText?: string;
 }
 
@@ -79,7 +80,8 @@ const GigListItem = (props: IGigListItemProps) => {
     const {
         date,
         text,
-        buttonText
+        buttonText,
+        url
     } = props;
 
     var buttonTextToDisplay = buttonText || "Tickets";
@@ -102,11 +104,13 @@ const GigListItem = (props: IGigListItemProps) => {
                     </StyledItemContentDiv>
                 </StyledItemDiv>
                 <StyledItemDiv justifyContent={"flex-end"}>
-                    <StyledItemButtonDiv
-                        colour={styles.colours.theme.tertiaryText}
-                        backgroundColour={styles.colours.theme.tertiaryBase}>
-                        {buttonTextToDisplay}
-                    </StyledItemButtonDiv>
+                    <a href={url}>
+                        <StyledItemButtonDiv
+                            colour={styles.colours.theme.tertiaryText}
+                            backgroundColour={styles.colours.theme.tertiaryBase}>
+                            {buttonTextToDisplay}
+                        </StyledItemButtonDiv>
+                    </a>
                 </StyledItemDiv>
             </StyledItemInfoDiv>
             <StyledHrDiv>

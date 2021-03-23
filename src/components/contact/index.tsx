@@ -62,7 +62,26 @@ const FriendsLi = Styled.li`
     ${css.centredFlexbox};
     margin: ${styles.padding.xxxs};
     font-size: ${styles.fontSize.small};
+    :hover {
+        color: ${styles.colours.theme.primaryHighlight};
+    }
 `;
+
+const friendsList: any = {
+    "Kade Brown": "https://kadebrown.bandcamp.com/album/frictions",
+    "Shaun Rammers": "https://shaunrammers.net/",
+    "Oscar Neyland": "https://www.oscarneylandmusic.com/",
+    "Great ~ Falls": "https://greatfallsaus.bandcamp.com/",
+    "Tom Allen-Graham": "https://tomallen-graham.bandcamp.com/",
+    "Holly Moore": "https://www.hollymooremusic.com/about"
+};
+
+const friendsListItems = () => {
+    return Object.keys(friendsList).map((key) => {
+        const friendUrl = friendsList[key];
+        return <FriendsLi key={key}><a href={friendUrl}>{key}</a></FriendsLi>;
+    })
+}
 
 interface IContactProps {
     id?: string;
@@ -80,7 +99,7 @@ const Contact = (props: IContactProps) => {
                     </StyledHeadingDiv>
                     <StyledContentDiv>
                         <StyledEmailDiv>
-                            For bookings email me at <a href={"mailto:" + SocialsUrls.Email} target="_blank"><u>lillianalbazi@gmail.com</u></a>.
+                            <a href={"mailto:" + SocialsUrls.Email} target="_blank"><u>lillianalbazi@gmail.com</u></a>.
                         </StyledEmailDiv>
                     </StyledContentDiv>
                 </StyledSectionDiv>
@@ -98,11 +117,7 @@ const Contact = (props: IContactProps) => {
                     </StyledHeadingDiv>
                     <StyledContentDiv>
                         <FriendsUl>
-                            <FriendsLi>Alima Parkes</FriendsLi>
-                            <FriendsLi>Aisling Adam</FriendsLi>
-                            <FriendsLi>Nisha Mccann</FriendsLi>
-                            <FriendsLi>Mica Knapp</FriendsLi>
-                            <FriendsLi>Jevan Garett</FriendsLi>
+                            {friendsListItems()}
                         </FriendsUl>
                     </StyledContentDiv>
                 </StyledSectionDiv>

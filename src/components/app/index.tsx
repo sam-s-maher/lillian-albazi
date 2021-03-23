@@ -12,9 +12,9 @@ const App = (props: IAppProps) => {
     return (
         <div>
             <Header />
-            <AlbumCta id="album"/>
-            <GigList id="gigs"/>
-            <Contact id="contact"/>
+            <AlbumCta id="album" />
+            <GigList id="gigs" />
+            <Contact id="contact" />
             <FooterTag />
         </div>
     );

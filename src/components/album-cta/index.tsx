@@ -66,7 +66,7 @@ const AlbumCta = (props: IAlbumCtaProps) => {
                     </StyledHeadingDiv>
                     <StyledSubheadingDiv>
                         <Heading
-                            text={'AFTER IMAGE'}
+                            text={'AFTER-IMAGE'}
                             type={'h2'}
                             style={'h2'}
                             fontFamily={'scheherazade'}

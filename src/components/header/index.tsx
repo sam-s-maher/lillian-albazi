@@ -63,16 +63,6 @@ const StyledIconImg = Styled(StyledImg)`
     max-height: 32px;
 `;
 
-// const StyledIconImg = Styled(StyledImg)`
-//     max-width: 32px;
-//     max-height: 32px;
-//     :hover {
-//         border: 1px solid red;
-//         margin: -1px;
-//         border-radius: 100%;
-//     }
-// `;
-
 interface IHeaderProps {}
 
 const Header = (props: IHeaderProps) => {
@@ -82,7 +72,6 @@ const Header = (props: IHeaderProps) => {
                 <div>
                     <nav>
                         <StyledUl>
-                            <li><StyledLink href="#album">Listen</StyledLink></li>
                             <li><StyledLink href="#gigs">Gigs</StyledLink></li>
                             <li><StyledLink href="#contact">Contact</StyledLink></li>
                         </StyledUl>

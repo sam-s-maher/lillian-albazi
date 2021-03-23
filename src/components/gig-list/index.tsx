@@ -20,6 +20,31 @@ const StyledListDiv = Styled.div`
     padding: ${styles.padding.s} 0;
 `;
 
+class GigItem {
+    date: string;
+    text: string;
+    url: string;
+
+    constructor(date: string, text: string, url: string) {
+        this.date = date;
+        this.text = text;
+        this.url = url;
+    }
+}
+
+const gigList: GigItem[] = [
+    new GigItem("SAT 26th June", "JAZZLAB, VIC", "https://jazzlab.club/1753-lillian-albazi-after-image-album-launch"),
+    new GigItem("SUN 4th July", "Brisbane Jazz Club, QLD", "https://www.google.com"),
+    new GigItem("FRI 9th July", "The Wharf, TAS", "https://www.google.com"),
+    new GigItem("SAT 10th July", "Pablo's Cocktails and Dreams, TAS", "https://www.google.com"),
+    new GigItem("FRI 16th July", "Bendigo Bank Theatre, VIC", "https://www.google.com"),
+    new GigItem("FRI 23rd July", "National Press Club, CNBRA", "https://www.google.com"),
+    new GigItem("SAT 24th July", "Merrigong Theatre, Music Lounge, Wollongong", "https://www.google.com"),
+    new GigItem("SUN 25th July", "Molly, CNBRA", "https://www.google.com"),
+    new GigItem("SAT 7th August", "Nineteen Ten, ADELAIDE", "https://www.google.com"),
+    new GigItem("SUN 8th August", "Nineteen Ten, ADELAIDE", "https://www.google.com"),
+];
+
 interface IGigListProps {
     id?: string;
 }
@@ -31,18 +56,13 @@ const GigList = (props: IGigListProps) => {
         <StyledGigListDiv id={id}>
             <StyledListDiv>
                 <GigListItemHeader />
-                <GigListItem
-                    date={"March 10th"}
-                    text={"Quartet, Paris Jazz Cat Quintet"}
-                />
-                <GigListItem
-                    date={"April 6th"}
-                    text={"Quartet, Paris Jazz Cat Quartet. w/ Hiroki"}
-                />
-                <GigListItem
-                    date={"May 31st"}
-                    text={"Quartet, Paris Jazz Cat Trio."}
-                />
+                {gigList.map((item, i) =>
+                    <GigListItem
+                        key={i}
+                        date={item.date}
+                        text={item.text}
+                        url={item.url}
+                    />)}
             </StyledListDiv>
         </StyledGigListDiv>
     );
