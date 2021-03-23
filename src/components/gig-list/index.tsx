@@ -16,7 +16,7 @@ const StyledGigListDiv = Styled.div`
 const StyledListDiv = Styled.div`
     ${css.centredFlexbox};
     width: 100%;
-    max-width: ${styles.mediaWidth.desktop};
+    max-width: ${styles.mediaSize.desktop};
     padding: ${styles.padding.s} 0;
 `;
 

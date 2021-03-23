@@ -9,25 +9,38 @@ import BandcampIcon from "images/bandcamp-icon-dark-32.png";
 import SpotifyIcon from "images/spotify-icon-white-32.png";
 
 const StyledHeaderDiv = Styled.div`
+    position: absolute;
     ${css.centredFlexbox};
+    flex-flow: row nowrap;
     height: 4vh;
     min-height: 40px;
     color: ${styles.colours.theme.tertiaryText};
     background-color: ${styles.colours.theme.tertiaryBase};
-    padding: 0 ${styles.padding.xxs};
+    width: 100%;
 `;
 
 const StyledNavbarDiv = Styled.div`
+    box-sizing: border-box;
     ${css.centredFlexbox};
-    flex-direction: row;
+    flex-flow: row nowrap;
     justify-content: space-between;
-    max-width: ${styles.mediaWidth.desktopWide};
+    max-width: ${styles.mediaSize.desktopWide};
     width: 100%;
+    padding: 0 ${styles.margin.s};
+    @media only screen and (max-width: ${styles.mediaSize.phone}) {
+        justify-content: center;
+    }
 `;
 
 const StyledUl = Styled.ul`
     display: flex;
     flex-flow: row nowrap;
+`;
+
+const StyledSocialsDiv = Styled.div`
+    @media only screen and (max-width: ${styles.mediaSize.phone}) {
+        display: none;
+    }
 `;
 
 const StyledLink = Styled.a`
@@ -50,6 +63,16 @@ const StyledIconImg = Styled(StyledImg)`
     max-height: 32px;
 `;
 
+// const StyledIconImg = Styled(StyledImg)`
+//     max-width: 32px;
+//     max-height: 32px;
+//     :hover {
+//         border: 1px solid red;
+//         margin: -1px;
+//         border-radius: 100%;
+//     }
+// `;
+
 interface IHeaderProps {}
 
 const Header = (props: IHeaderProps) => {
@@ -65,7 +88,7 @@ const Header = (props: IHeaderProps) => {
                         </StyledUl>
                     </nav>
                 </div>
-                <div>
+                <StyledSocialsDiv>
                     <nav>
                         <StyledUl>
                             <StyledIconImgLi>
@@ -82,7 +105,7 @@ const Header = (props: IHeaderProps) => {
                             </StyledIconImgLi>
                         </StyledUl>
                     </nav>
-                </div>
+                </StyledSocialsDiv>
             </StyledNavbarDiv>
         </StyledHeaderDiv>
     );

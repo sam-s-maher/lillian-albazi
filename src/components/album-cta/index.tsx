@@ -10,11 +10,21 @@ import BackgroundImage from "images/background-image-2560.jpg";
 
 const StyledWrapperDiv = Styled.div`
     ${css.centredFlexbox};
-    justify-content: space-around; 
     background: ${styles.colours.theme.primaryBase} url(${BackgroundImage}) no-repeat center;
     background-size: cover;
-    padding: 14vh 0 12vh;
-    height: 70vh;
+    height: 100vh;
+    min-height: ${styles.mediaSize.tablet};
+`;
+
+const StyledPaddedDiv = Styled.div`
+    ${css.centredFlexbox};
+    padding: ${styles.padding.xs} 0;
+    flex: 1 1 0;
+    min-height: 0;
+`;
+
+const StyledPaddedAlbumDiv = Styled(StyledPaddedDiv)`
+    flex: 2 1 0;
 `;
 
 const StyledBannerDiv = Styled.div`
@@ -23,6 +33,7 @@ const StyledBannerDiv = Styled.div`
 
 const StyledHeadingDiv = Styled.div`
     color: ${styles.colours.theme.primaryText};
+    padding-top: 4vh;
 `;
 
 const StyledSubheadingDiv = Styled.div`
@@ -43,30 +54,36 @@ const AlbumCta = (props: IAlbumCtaProps) => {
     
     return (
         <StyledWrapperDiv id={id}>
-            <StyledBannerDiv>
-                <StyledHeadingDiv>
-                    <Heading
-                        text={'LILLIAN ALBAZI'}
-                        type={'h1'}
-                        style={'h1'}
-                        fontFamily={'scheherazade'}
+            <StyledPaddedDiv>
+                <StyledBannerDiv>
+                    <StyledHeadingDiv>
+                        <Heading
+                            text={'LILLIAN ALBAZI'}
+                            type={'h1'}
+                            style={'h1'}
+                            fontFamily={'scheherazade'}
+                        />
+                    </StyledHeadingDiv>
+                    <StyledSubheadingDiv>
+                        <Heading
+                            text={'AFTER IMAGE'}
+                            type={'h2'}
+                            style={'h2'}
+                            fontFamily={'scheherazade'}
+                        />
+                    </StyledSubheadingDiv>
+                </StyledBannerDiv>
+            </StyledPaddedDiv>
+            <StyledPaddedAlbumDiv>
+                <AlbumFeature />
+            </StyledPaddedAlbumDiv>
+            <StyledPaddedDiv>
+                <StyledButtonDiv>
+                    <CtaButton
+                            text={'ORDER HERE'}
                     />
-                </StyledHeadingDiv>
-                <StyledSubheadingDiv>
-                    <Heading
-                        text={'AFTER IMAGE'}
-                        type={'h2'}
-                        style={'h2'}
-                        fontFamily={'scheherazade'}
-                    />
-                </StyledSubheadingDiv>
-            </StyledBannerDiv>
-            <AlbumFeature />
-            <StyledButtonDiv>
-               <CtaButton
-                    text={'ORDER HERE'}
-               />
-            </StyledButtonDiv>
+                </StyledButtonDiv>
+            </StyledPaddedDiv>
         </StyledWrapperDiv>
     );
 }

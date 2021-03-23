@@ -1,4 +1,4 @@
-export const mediaWidth = {
+export const mediaSize = {
     phone: "576px",
     tablet: "768px",
     desktop: "1024px",

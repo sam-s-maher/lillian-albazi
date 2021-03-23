@@ -21,6 +21,9 @@ const StyledContactDiv = Styled.div`
     flex-direction: row;
     align-items: flex-start;
     max-width: 768px;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
 `;
 
 const StyledSectionDiv = Styled.div`
