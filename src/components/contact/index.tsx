@@ -23,6 +23,7 @@ const StyledContactDiv = Styled.div`
     max-width: 768px;
     @media screen and (max-width: 768px) {
         flex-direction: column;
+        align-items: center;
     }
 `;
 
@@ -30,6 +31,7 @@ const StyledSectionDiv = Styled.div`
     ${css.centredFlexbox};
     flex: 1 1 0;
     padding: 0 ${styles.padding.xxs};
+    max-width: 80%;
 `;
 
 const StyledContentDiv = Styled.div`
