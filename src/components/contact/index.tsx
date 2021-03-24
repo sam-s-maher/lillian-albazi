@@ -21,17 +21,25 @@ const StyledContactDiv = Styled.div`
     flex-direction: row;
     align-items: flex-start;
     max-width: 768px;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: ${styles.mediaSize.tablet}) {
         flex-direction: column;
         align-items: center;
     }
 `;
+
+interface IStyledSectionDivProps {
+    flexOrder: number;
+    tabletFlexOrder?: number;
+}
 
 const StyledSectionDiv = Styled.div`
     ${css.centredFlexbox};
     flex: 1 1 0;
     padding: 0 ${styles.padding.xxs};
     max-width: 80%;
+    @media screen and (max-width: ${styles.mediaSize.tablet}) {
+        order: ${(props: IStyledSectionDivProps) => (props.tabletFlexOrder ||  props.flexOrder)};
+    }
 `;
 
 const StyledContentDiv = Styled.div`
@@ -95,7 +103,7 @@ const Contact = (props: IContactProps) => {
     return (
         <StyledContactBackgroundDiv id={id}>
             <StyledContactDiv>
-                <StyledSectionDiv>
+                <StyledSectionDiv flexOrder={1}>
                     <StyledHeadingDiv>
                         <Heading text={"Bookings"} type={"h3"} style={"h3"}/>
                     </StyledHeadingDiv>
@@ -105,7 +113,7 @@ const Contact = (props: IContactProps) => {
                         </StyledEmailDiv>
                     </StyledContentDiv>
                 </StyledSectionDiv>
-                <StyledSectionDiv>
+                <StyledSectionDiv flexOrder={2} tabletFlexOrder={-1}>
                     <StyledHeadingDiv>
                         <Heading text={"Social"} type={"h3"} style={"h3"} />
                     </StyledHeadingDiv>
@@ -113,7 +121,7 @@ const Contact = (props: IContactProps) => {
                         <SocialsList />
                     </StyledContentDiv>
                 </StyledSectionDiv>
-                <StyledSectionDiv>
+                <StyledSectionDiv flexOrder={3}>
                     <StyledHeadingDiv>
                         <Heading text={"Friends"} type={"h3"} style={"h3"} />
                     </StyledHeadingDiv>

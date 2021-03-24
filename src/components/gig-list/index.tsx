@@ -18,9 +18,6 @@ const StyledListDiv = Styled.div`
     width: 100%;
     max-width: ${styles.mediaSize.desktop};
     padding: ${styles.padding.s} 0;
-    @media screen (max-width: ${styles.mediaSize.phone}) {
-        padding: 0;
-    }
 `;
 
 class GigItem {

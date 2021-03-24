@@ -1,4 +1,5 @@
 export const mediaSize = {
+    phoneSmall: "400px",
     phone: "576px",
     tablet: "768px",
     desktop: "1024px",

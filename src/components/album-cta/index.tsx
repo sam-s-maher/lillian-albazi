@@ -34,6 +34,7 @@ const StyledBannerDiv = Styled.div`
 const StyledHeadingDiv = Styled.div`
     color: ${styles.colours.theme.primaryText};
     padding-top: 4vh;
+    text-align: center;
 `;
 
 const StyledSubheadingDiv = Styled.div`

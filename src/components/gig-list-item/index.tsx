@@ -45,6 +45,9 @@ const StyledItemContentDiv = Styled.div`
     background-color: ${(props: IStyledItemContentDivProps) => props.backgroundColour};
     font-weight: ${(props: IStyledItemContentDivProps) => props.fontWeight};
     font-size: ${(props: IStyledItemContentDivProps) => props.fontSize};
+    @media screen and (max-width: ${styles.mediaSize.phone}) {
+        padding: 0;
+    }
 `;
 
 const StyledItemButtonDiv = Styled(StyledItemContentDiv)`
@@ -97,7 +100,7 @@ const GigListItem = (props: IGigListItemProps) => {
                         <p>{date}</p>
                     </StyledItemContentDiv>
                 </StyledItemDiv>
-                <StyledItemDiv flexGrow={"3"} justifyContent={"center"} textAlign={"center"}>
+                <StyledItemDiv flexGrow={"2"} justifyContent={"center"} textAlign={"center"}>
                     <StyledItemContentDiv
                         colour={styles.colours.theme.secondaryText}>
                         <p>{text}</p>

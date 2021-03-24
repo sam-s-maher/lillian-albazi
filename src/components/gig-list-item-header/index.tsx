@@ -16,7 +16,7 @@ import {
 
 const StyledItemContentDiv = Styled.div`
     padding: 0 ${styles.padding.s};
-    @media screen (max-width: ${styles.mediaSize.phone}) {
+    @media screen and (max-width: ${styles.mediaSize.phone}) {
         padding: 0;
     }
 `;
