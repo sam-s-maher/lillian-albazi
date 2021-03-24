@@ -74,6 +74,7 @@ const StyledHr = Styled.hr`
 
 interface IGigListItemProps {
     date: string;
+    dayName: string;
     text: string;
     url: string;
     buttonText?: string;
@@ -82,6 +83,7 @@ interface IGigListItemProps {
 const GigListItem = (props: IGigListItemProps) => {
     const {
         date,
+        dayName,
         text,
         buttonText,
         url
@@ -97,7 +99,8 @@ const GigListItem = (props: IGigListItemProps) => {
                         colour={styles.colours.theme.secondaryText}
                         fontWeight={styles.fontWeight.bold}
                         fontSize={styles.fontSize.large}>
-                        <p>{date}</p>
+                        <div><p>{date}</p></div>
+                        <div><p>{dayName}</p></div>
                     </StyledItemContentDiv>
                 </StyledItemDiv>
                 <StyledItemDiv flexGrow={"2"} justifyContent={"center"} textAlign={"center"}>

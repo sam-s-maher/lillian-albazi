@@ -22,27 +22,29 @@ const StyledListDiv = Styled.div`
 
 class GigItem {
     date: string;
+    dayName: string;
     text: string;
     url: string;
 
-    constructor(date: string, text: string, url: string) {
+    constructor(date: string, dayName: string, text: string, url: string) {
         this.date = date;
+        this.dayName = dayName;
         this.text = text;
         this.url = url;
     }
 }
 
 const gigList: GigItem[] = [
-    new GigItem("SAT 26th June", "JAZZLAB, VIC", "https://jazzlab.club/1753-lillian-albazi-after-image-album-launch"),
-    new GigItem("SUN 4th July", "Brisbane Jazz Club, QLD", "https://www.google.com"),
-    new GigItem("FRI 9th July", "The Wharf, TAS", "https://www.google.com"),
-    new GigItem("SAT 10th July", "Pablo's Cocktails and Dreams, TAS", "https://www.google.com"),
-    new GigItem("FRI 16th July", "Bendigo Bank Theatre, VIC", "https://www.google.com"),
-    new GigItem("FRI 23rd July", "National Press Club, CNBRA", "https://www.google.com"),
-    new GigItem("SAT 24th July", "Merrigong Theatre, Music Lounge, Wollongong", "https://www.google.com"),
-    new GigItem("SUN 25th July", "Molly, CNBRA", "https://www.google.com"),
-    new GigItem("SAT 7th August", "Nineteen Ten, ADELAIDE", "https://www.google.com"),
-    new GigItem("SUN 8th August", "Nineteen Ten, ADELAIDE", "https://www.google.com"),
+    new GigItem("26th June", "SAT", "JAZZLAB, VIC", "https://jazzlab.club/1753-lillian-albazi-after-image-album-launch"),
+    new GigItem("4th July", "SUN", "Brisbane Jazz Club, QLD", "https://www.google.com"),
+    new GigItem("9th July", "FRI", "The Wharf, TAS", "https://www.google.com"),
+    new GigItem("10th July", "SAT", "Pablo's Cocktails and Dreams, TAS", "https://www.google.com"),
+    new GigItem("16th July", "FRI", "Bendigo Bank Theatre, VIC", "https://www.google.com"),
+    new GigItem("23rd July", "FRI", "National Press Club, CNBRA", "https://www.google.com"),
+    new GigItem("24th July", "SAT", "Merrigong Theatre, Music Lounge, Wollongong", "https://www.google.com"),
+    new GigItem("25th July", "SUN", "Molly, CNBRA", "https://www.google.com"),
+    new GigItem("7th August", "SAT", "Nineteen Ten, ADELAIDE", "https://www.google.com"),
+    new GigItem("8th August", "SUN", "Nineteen Ten, ADELAIDE", "https://www.google.com"),
 ];
 
 interface IGigListProps {
@@ -60,6 +62,7 @@ const GigList = (props: IGigListProps) => {
                     <GigListItem
                         key={i}
                         date={item.date}
+                        dayName={item.dayName}
                         text={item.text}
                         url={item.url}
                     />)}
