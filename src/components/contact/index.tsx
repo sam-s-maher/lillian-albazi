@@ -101,7 +101,7 @@ const Contact = (props: IContactProps) => {
                     </StyledHeadingDiv>
                     <StyledContentDiv>
                         <StyledEmailDiv>
-                            <a href={"mailto:" + SocialsUrls.Email} target="_blank"><u>lillianalbazi@gmail.com</u></a>.
+                            <a href={"mailto:" + SocialsUrls.Email} target="_blank"><u>albazi.music@gmail.com</u></a>
                         </StyledEmailDiv>
                     </StyledContentDiv>
                 </StyledSectionDiv>
