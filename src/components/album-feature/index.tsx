@@ -13,6 +13,7 @@ const StyledAlbumFeatureDiv = Styled.div`
 `;
 
 const StyledAlbumDiv = Styled.div`
+    ${css.centredFlexbox}
     height: 100%;
     max-height: 512px;
 `;
@@ -20,6 +21,7 @@ const StyledAlbumDiv = Styled.div`
 const StyledAlbumImg = Styled(StyledImg)`
     height: 100%;
     width: auto;
+    max-height: 100vw;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
 `;
 

@@ -15,7 +15,12 @@ export const StyledItemInfoDiv = Styled.div`
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    padding: ${styles.padding.xxs};
+    padding: 0 ${styles.padding.s} ${styles.padding.s};
+    box-sizing: border-box;
+    @media screen and (max-width: ${styles.mediaSize.phone}) {
+        padding-left: 0;
+        padding-right: 0;
+    }
 `;
 
 interface IStyledItemDivProps {
@@ -40,14 +45,16 @@ interface IStyledItemContentDivProps {
 }
 
 const StyledItemContentDiv = Styled.div`
-    padding: 0 ${styles.padding.s};
     color: ${(props: IStyledItemContentDivProps) => props.colour};
     background-color: ${(props: IStyledItemContentDivProps) => props.backgroundColour};
     font-weight: ${(props: IStyledItemContentDivProps) => props.fontWeight};
     font-size: ${(props: IStyledItemContentDivProps) => props.fontSize};
-    @media screen and (max-width: ${styles.mediaSize.phone}) {
-        padding: 0;
-    }
+`;
+
+const StyledDayNameDiv = Styled.div`
+    color: ${styles.colours.base.grey};
+    font-size: ${styles.fontSize.default};
+    padding-top: ${styles.padding.xxxxs};
 `;
 
 const StyledItemButtonDiv = Styled(StyledItemContentDiv)`
@@ -56,8 +63,13 @@ const StyledItemButtonDiv = Styled(StyledItemContentDiv)`
     min-width: 70px;
     cursor: pointer;
     transition: font-size ${styles.transitionTime.fastest};
+    padding: 0 ${styles.padding.xxxxs};
     &:hover {
         font-size: 110%;
+    }
+    @media screen and (max-width: ${styles.mediaSize.phoneSmall}) {
+        font-size: ${styles.fontSize.small};
+        padding: 0;
     }
 `;
 
@@ -99,8 +111,8 @@ const GigListItem = (props: IGigListItemProps) => {
                         colour={styles.colours.theme.secondaryText}
                         fontWeight={styles.fontWeight.bold}
                         fontSize={styles.fontSize.large}>
-                        <div><p>{date}</p></div>
-                        <div><p>{dayName}</p></div>
+                        <div>{date}</div>
+                        <StyledDayNameDiv>{dayName}</StyledDayNameDiv>
                     </StyledItemContentDiv>
                 </StyledItemDiv>
                 <StyledItemDiv flexGrow={"2"} justifyContent={"center"} textAlign={"center"}>

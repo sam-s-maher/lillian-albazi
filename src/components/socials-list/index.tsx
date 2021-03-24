@@ -24,7 +24,7 @@ const StyledSocialUl = Styled.ul`
     flex-direction: row;
     flex-wrap: wrap;
     @media screen and (max-width: 768px) {
-        max-width: 80%;
+        max-width: 65%;
     }
 `;
 

@@ -5,7 +5,7 @@ const base = {
     cream: "#F1E7DB",
     offWhite: "#FAFAFA",
     grey: "#2D2D2D",
-    orange: "#AD521E",
+    orange: "#C16741",
     bandcampTeal: "#1DA2C2",
     bandcampBlue: "#61929C",
     spotifyGreen: "#1DB954",
