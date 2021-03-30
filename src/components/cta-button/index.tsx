@@ -6,12 +6,12 @@ import { styles } from "styles/variables";
 
 const StyledWrapperDiv = Styled.div`
     ${css.centredFlexbox}
-    min-width: 240px;
-    min-height: 60px;
+    min-width: 232px;
+    min-height: 76px;
     background-color: ${styles.colours.theme.tertiaryBase};
     color: ${styles.colours.theme.tertiaryText};
     border: solid ${styles.colours.theme.tertiaryText} 1px;
-    font-size: ${styles.fontSize.default};
+    font-size: ${styles.fontSize.large};
     cursor: pointer;
     transition: color ${styles.transitionTime.fastest};
     &:hover {

@@ -35,7 +35,7 @@ const GigListItemHeader = (props: GigListItemHeaderProps) => {
                 </StyledItemDiv>
                 <StyledItemDiv flexGrow={"3"} justifyContent={"flex-center"}>
                     <StyledItemContentDiv>
-                        <Heading text={"Gigs"} type={"h1"} style={"h1"}/>
+                        <Heading text={"Gigs"} type={"h1"} style={"h2"}/>
                     </StyledItemContentDiv>
                 </StyledItemDiv>
                 <StyledItemDiv justifyContent={"flex-end"}>

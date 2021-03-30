@@ -57,6 +57,7 @@ const StyledHeadingDiv = Styled.div`
 `;
 
 const StyledEmailDiv = Styled.div`
+    font-size: 16px;
     text-align: center;
     line-height: 2rem;
 `;
