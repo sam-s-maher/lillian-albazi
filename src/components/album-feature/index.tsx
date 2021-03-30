@@ -4,7 +4,7 @@ import Styled from "styled-components";
 import { styles } from "styles/variables";
 import { css } from "styles/styled-css";
 import StyledImg from "styles/styled-components/styled-img";
-import AlbumArtMedium from "images/album-art-x.png";
+import AlbumArtMedium from "images/album-art-512.jpg";
 
 const StyledAlbumFeatureDiv = Styled.div`
     ${css.centredFlexbox};

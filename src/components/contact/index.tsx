@@ -6,7 +6,8 @@ import { styles } from "styles/variables";
 import Heading from "components/heading";
 import SocialsList from "components/socials-list";
 import { SocialsUrls } from "components/socials-list/socials-urls";
-import ContactBackground from "images/contact-background-960.jpg";
+// import ContactBackground from "images/contact-background-960.jpg";
+import ContactBackground from "images/contact-background-1024-2.jpg";
 
 const StyledContactBackgroundDiv = Styled.div`
     ${css.centredFlexbox};
