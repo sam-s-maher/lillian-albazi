@@ -7,6 +7,11 @@ import StyledImg from "styles/styled-components/styled-img";
 
 import BandcampIcon from "images/bandcamp-icon-dark-32.png";
 import SpotifyIcon from "images/spotify-icon-white-32.png";
+import { SocialsUrls } from "components/socials-list/socials-urls";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faEnvelope
+} from "@fortawesome/free-solid-svg-icons";
 
 const StyledHeaderDiv = Styled.div`
     position: absolute;
@@ -63,6 +68,10 @@ const StyledIconImg = Styled(StyledImg)`
     max-height: 32px;
 `;
 
+const StyledEmailIcon = Styled(FontAwesomeIcon)`
+    padding-left: .7rem;
+`;
+
 interface IHeaderProps {}
 
 const Header = (props: IHeaderProps) => {
@@ -73,7 +82,8 @@ const Header = (props: IHeaderProps) => {
                     <nav>
                         <StyledUl>
                             <li><StyledLink href="#gigs">Gigs</StyledLink></li>
-                            <li><StyledLink href="#contact">Contact</StyledLink></li>
+                            <li><StyledLink href="#contact">Follow</StyledLink></li>
+                            <li><StyledLink href={"mailto:" + SocialsUrls.Email} target="_blank">Contact<StyledEmailIcon icon={faEnvelope} size="xs"/></StyledLink></li>
                         </StyledUl>
                     </nav>
                 </div>

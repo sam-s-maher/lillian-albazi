@@ -5,7 +5,7 @@ import { css } from "styles/styled-css";
 import { styles } from "styles/variables";
 import Heading from "components/heading";
 import SocialsList from "components/socials-list";
-import { SocialsUrls } from "components/socials-list/socials-urls";
+// import { SocialsUrls } from "components/socials-list/socials-urls";
 import ContactBackground from "images/contact-background-1024.jpg";
 
 const StyledContactBackgroundDiv = Styled.div`
@@ -20,7 +20,7 @@ const StyledContactDiv = Styled.div`
     ${css.centredFlexbox};
     flex-direction: row;
     align-items: flex-start;
-    max-width: 768px;
+    max-width: 500px;
     @media screen and (max-width: ${styles.mediaSize.tablet}) {
         flex-direction: column;
         align-items: center;
@@ -79,10 +79,11 @@ const FriendsLi = Styled.li`
 `;
 
 const friendsList: any = {
+    "Great ~ Falls": "https://greatfallsaus.bandcamp.com/",
+    "Robert Albazi": "https://www.robertalbazi.com/",
     "Kade Brown": "https://kadebrown.bandcamp.com/album/frictions",
     "Shaun Rammers": "https://shaunrammers.net/",
     "Oscar Neyland": "https://www.oscarneylandmusic.com/",
-    "Great ~ Falls": "https://greatfallsaus.bandcamp.com/",
     "Tom Allen-Graham": "https://tomallen-graham.bandcamp.com/",
     "Holly Moore": "https://www.hollymooremusic.com/about"
 };
@@ -104,7 +105,7 @@ const Contact = (props: IContactProps) => {
     return (
         <StyledContactBackgroundDiv id={id}>
             <StyledContactDiv>
-                <StyledSectionDiv flexOrder={1}>
+                {/* <StyledSectionDiv flexOrder={1}>
                     <StyledHeadingDiv>
                         <Heading text={"Bookings"} type={"h3"} style={"h3"}/>
                     </StyledHeadingDiv>
@@ -113,7 +114,7 @@ const Contact = (props: IContactProps) => {
                             <a href={"mailto:" + SocialsUrls.Email} target="_blank"><u>albazi.music@gmail.com</u></a>
                         </StyledEmailDiv>
                     </StyledContentDiv>
-                </StyledSectionDiv>
+                </StyledSectionDiv> */}
                 <StyledSectionDiv flexOrder={2} tabletFlexOrder={-1}>
                     <StyledHeadingDiv>
                         <Heading text={"Social"} type={"h3"} style={"h3"} />
