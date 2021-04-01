@@ -44,6 +44,8 @@ const StyledSubheadingDiv = Styled.div`
 
 const StyledButtonDiv = Styled.div`
     ${css.centredFlexbox};
+    position: relative;
+    bottom: 30px;
 `;
 
 interface IAlbumCtaProps {
