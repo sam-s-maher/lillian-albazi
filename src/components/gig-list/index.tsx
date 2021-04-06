@@ -35,16 +35,16 @@ class GigItem {
 }
 
 const gigList: GigItem[] = [
-    new GigItem("26th June", "SAT", "JAZZLAB, VIC", "https://jazzlab.club/1753-lillian-albazi-after-image-album-launch"),
+    new GigItem("26th June", "SAT", "Jazzlab, VIC", "https://jazzlab.club/1753-lillian-albazi-after-image-album-launch"),
     new GigItem("4th July", "SUN", "Brisbane Jazz Club, QLD", "https://www.google.com"),
     new GigItem("9th July", "FRI", "The Wharf, TAS", "https://www.google.com"),
     new GigItem("10th July", "SAT", "Pablo's Cocktails and Dreams, TAS", "https://www.google.com"),
     new GigItem("16th July", "FRI", "Bendigo Bank Theatre, VIC", "https://www.google.com"),
-    new GigItem("23rd July", "FRI", "National Press Club, CNBRA", "https://www.google.com"),
-    new GigItem("24th July", "SAT", "Merrigong Theatre, Music Lounge, Wollongong", "https://www.google.com"),
-    new GigItem("25th July", "SUN", "Molly, CNBRA", "https://www.google.com"),
-    new GigItem("7th August", "SAT", "Nineteen Ten, ADELAIDE", "https://www.google.com"),
-    new GigItem("8th August", "SUN", "Nineteen Ten, ADELAIDE", "https://www.google.com"),
+    new GigItem("23rd July", "FRI", "National Press Club, ACT", "https://www.google.com"),
+    new GigItem("24th July", "SAT", "Music Lounge, Merrigong Theatre, NSW", "https://www.google.com"),
+    new GigItem("25th July", "SUN", "Molly, ACT", "https://www.google.com"),
+    new GigItem("7th August", "SAT", "Nineteen Ten, SA", "https://www.google.com"),
+    new GigItem("8th August", "SUN", "Nineteen Ten, SA", "https://www.google.com"),
 ];
 
 interface IGigListProps {
