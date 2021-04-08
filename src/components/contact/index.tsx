@@ -20,7 +20,8 @@ const StyledContactDiv = Styled.div`
     ${css.centredFlexbox};
     flex-direction: row;
     align-items: flex-start;
-    max-width: 500px;
+    max-width: 700px;
+    justify-content: space-around;
     @media screen and (max-width: ${styles.mediaSize.tablet}) {
         flex-direction: column;
         align-items: center;
@@ -36,6 +37,7 @@ const StyledSectionDiv = Styled.div`
     ${css.centredFlexbox};
     flex: 1 1 0;
     padding: 0 ${styles.padding.xxs};
+    margin: 0 ${styles.margin.m};
     max-width: 80%;
     @media screen and (max-width: ${styles.mediaSize.tablet}) {
         order: ${(props: IStyledSectionDivProps) => (props.tabletFlexOrder ||  props.flexOrder)};

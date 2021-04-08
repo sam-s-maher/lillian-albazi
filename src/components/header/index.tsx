@@ -91,16 +91,20 @@ const Header = (props: IHeaderProps) => {
                     <nav>
                         <StyledUl>
                             <StyledIconImgLi>
-                                <StyledIconImg
-                                    src={BandcampIcon}
-                                    alt="Bandcamp logo"
-                                />
+                                <a href={SocialsUrls.Websites.Bandcamp}>
+                                    <StyledIconImg
+                                        src={BandcampIcon}
+                                        alt="Bandcamp logo"
+                                    />
+                                </a>
                             </StyledIconImgLi>
                             <StyledIconImgLi>
-                                <StyledIconImg
-                                    src={SpotifyIcon}
-                                    alt="Spotify logo"
-                                />
+                                <a href={SocialsUrls.Websites.Spotify}>
+                                    <StyledIconImg
+                                        src={SpotifyIcon}
+                                        alt="Spotify logo"
+                                    />
+                                </a>
                             </StyledIconImgLi>
                         </StyledUl>
                     </nav>

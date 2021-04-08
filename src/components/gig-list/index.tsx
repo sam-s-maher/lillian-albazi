@@ -43,8 +43,8 @@ const gigList: GigItem[] = [
     new GigItem("23rd July", "FRI", "National Press Club, ACT", "https://www.google.com"),
     new GigItem("24th July", "SAT", "Music Lounge, Merrigong Theatre, NSW", "https://www.google.com"),
     new GigItem("25th July", "SUN", "Molly, ACT", "https://www.google.com"),
-    new GigItem("7th August", "SAT", "Nineteen Ten, SA", "https://www.google.com"),
-    new GigItem("8th August", "SUN", "Nineteen Ten, SA", "https://www.google.com"),
+    new GigItem("7th August", "SAT", "Nineteen Ten, SA", "https://www.eventbrite.com.au/e/lillian-albazi-after-image-album-tour-tickets-149809260531"),
+    new GigItem("8th August", "SUN", "Nineteen Ten, SA", "https://www.eventbrite.com.au/e/lillian-albazi-after-image-album-tour-tickets-149809260531"),
 ];
 
 interface IGigListProps {
