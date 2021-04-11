@@ -7,6 +7,7 @@ import StyledImg from "styles/styled-components/styled-img";
 
 import BandcampIcon from "images/bandcamp-icon-dark-32.png";
 import SpotifyIcon from "images/spotify-icon-white-32.png";
+import Heading from "components/heading";
 import { SocialsUrls } from "components/socials-list/socials-urls";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -28,7 +29,6 @@ const StyledNavbarDiv = Styled.div`
     box-sizing: border-box;
     ${css.centredFlexbox};
     flex-flow: row nowrap;
-    justify-content: space-between;
     max-width: ${styles.mediaSize.desktopWide};
     width: 100%;
     padding: 0 ${styles.margin.s};
@@ -42,8 +42,33 @@ const StyledUl = Styled.ul`
     flex-flow: row nowrap;
 `;
 
-const StyledSocialsDiv = Styled.div`
+const LeftWrapperDiv = Styled.div`
+    ${css.centredFlexbox};
+    justify-content: flex-start;
+    flex: 4 1 0;
+    flex-flow: row nowrap;
     @media only screen and (max-width: ${styles.mediaSize.phone}) {
+        justify-content: center;
+    }
+`;
+
+const RightWrapperDiv = Styled.div`
+    ${css.centredFlexbox};
+    justify-content: flex-end;
+    flex: 4 1 0;
+    flex-flow: row nowrap;
+`;
+
+const LogoWrapperDiv = Styled.div`
+    ${css.centredFlexbox};
+    width: fit-content;
+    @media only screen and (max-width: ${styles.mediaSize.phone}) {
+        display: none;
+    }
+`;
+
+const StyledSocialsDiv = Styled(RightWrapperDiv)`
+    @media only screen and (max-width: ${styles.mediaSize.desktop}) {
         display: none;
     }
 `;
@@ -69,7 +94,14 @@ const StyledIconImg = Styled(StyledImg)`
 `;
 
 const StyledEmailIcon = Styled(FontAwesomeIcon)`
+    position: absolute;
+    transform: translateY(3px);
     padding-left: .7rem;
+`;
+
+const StyledHeading = Styled(Heading)`
+    font-size: 32px;
+    margin-bottom: -6px;
 `;
 
 interface IHeaderProps {}
@@ -78,7 +110,7 @@ const Header = (props: IHeaderProps) => {
     return (
         <StyledHeaderDiv>
             <StyledNavbarDiv>
-                <div>
+                <LeftWrapperDiv>
                     <nav>
                         <StyledUl>
                             <li><StyledLink href="#gigs">Gigs</StyledLink></li>
@@ -86,7 +118,17 @@ const Header = (props: IHeaderProps) => {
                             <li><StyledLink href={"mailto:" + SocialsUrls.Email} target="_blank">Contact<StyledEmailIcon icon={faEnvelope} size="xs"/></StyledLink></li>
                         </StyledUl>
                     </nav>
-                </div>
+                </LeftWrapperDiv>
+                <LogoWrapperDiv>
+                    <div>
+                        <StyledHeading
+                            text={'LILLIAN ALBAZI'}
+                            type={'h1'}
+                            style={'h3'}
+                            fontFamily={'scheherazade'}
+                        />
+                    </div>
+                </LogoWrapperDiv>
                 <StyledSocialsDiv>
                     <nav>
                         <StyledUl>

@@ -7,6 +7,7 @@ import Heading from "components/heading";
 import AlbumFeature from "components/album-feature";
 import CtaButton from "components/cta-button";
 import BackgroundImage from "images/background-image-2560.jpg";
+import { faLevelDownAlt } from "@fortawesome/free-solid-svg-icons";
 
 const StyledWrapperDiv = Styled.div`
     ${css.centredFlexbox};
@@ -14,6 +15,17 @@ const StyledWrapperDiv = Styled.div`
     background-size: cover;
     height: 100vh;
     min-height: ${styles.mediaSize.tablet};
+`;
+
+const WrapperDiv = Styled.div`
+    ${css.centredFlexbox};
+    height: 70%;
+    :hover .disc-image {
+        transform: translateX(35%) rotate(20deg);
+    }
+    @media screen and (max-height: ${styles.mediaSize.tablet}) {
+        height: 80%;
+    }
 `;
 
 const StyledPaddedDiv = Styled.div`
@@ -57,7 +69,7 @@ const AlbumCta = (props: IAlbumCtaProps) => {
     
     return (
         <StyledWrapperDiv id={id}>
-            <StyledPaddedDiv>
+            {/* <StyledPaddedDiv>
                 <StyledBannerDiv>
                     <StyledHeadingDiv>
                         <Heading
@@ -76,17 +88,19 @@ const AlbumCta = (props: IAlbumCtaProps) => {
                         />
                     </StyledSubheadingDiv>
                 </StyledBannerDiv>
-            </StyledPaddedDiv>
-            <StyledPaddedAlbumDiv>
-                <AlbumFeature />
-            </StyledPaddedAlbumDiv>
-            <StyledPaddedDiv>
-                <StyledButtonDiv>
-                    <CtaButton
-                            text={'ORDER HERE'}
-                    />
-                </StyledButtonDiv>
-            </StyledPaddedDiv>
+            </StyledPaddedDiv> */}
+            <WrapperDiv>
+                <StyledPaddedAlbumDiv>
+                    <AlbumFeature />
+                </StyledPaddedAlbumDiv>
+                <StyledPaddedDiv>
+                    <StyledButtonDiv>
+                        <CtaButton
+                                text={'ORDER HERE'}
+                        />
+                    </StyledButtonDiv>
+                </StyledPaddedDiv>
+            </WrapperDiv>
         </StyledWrapperDiv>
     );
 }
