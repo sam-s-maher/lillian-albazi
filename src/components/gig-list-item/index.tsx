@@ -101,7 +101,7 @@ const GigListItem = (props: IGigListItemProps) => {
         url
     } = props;
 
-    var buttonTextToDisplay = buttonText || "Tickets";
+    var buttonTextToDisplay = buttonText || (url ? "Tickets" : "Soon");
 
     return (
         <StyledGigListItemDiv>
