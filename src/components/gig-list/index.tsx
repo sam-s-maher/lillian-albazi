@@ -39,6 +39,7 @@ const gigList: GigItem[] = [
     new GigItem("4th July", "SUN", "Brisbane Jazz Club, QLD", null),
     new GigItem("9th July", "FRI", "The Wharf, TAS", null),
     new GigItem("10th July", "SAT", "Pablo's Cocktails and Dreams, TAS", null),
+    new GigItem("11th July", "SUN", "MONA, TAS", "https://jazzlab.club/1753-lillian-albazi-after-image-album-launch"), 
     new GigItem("16th July", "FRI", "Bendigo Bank Theatre, VIC", null),
     new GigItem("23rd July", "FRI", "National Press Club, ACT", null),
     new GigItem("24th July", "SAT", "Music Lounge, Merrigong Theatre, NSW", null),

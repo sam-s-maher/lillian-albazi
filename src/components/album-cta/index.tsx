@@ -3,11 +3,9 @@ import Styled from "styled-components";
 
 import { styles } from "styles/variables";
 import { css } from "styles/styled-css";
-import Heading from "components/heading";
 import AlbumFeature from "components/album-feature";
 import CtaButton from "components/cta-button";
 import BackgroundImage from "images/background-image-2560.jpg";
-import { faLevelDownAlt } from "@fortawesome/free-solid-svg-icons";
 
 const StyledWrapperDiv = Styled.div`
     ${css.centredFlexbox};
@@ -15,16 +13,17 @@ const StyledWrapperDiv = Styled.div`
     background-size: cover;
     height: 100vh;
     min-height: ${styles.mediaSize.tablet};
+    justify-content: flex-end;
 `;
 
 const WrapperDiv = Styled.div`
     ${css.centredFlexbox};
-    height: 70%;
+    height: 75%;
     :hover .disc-image {
         transform: translateX(35%) rotate(20deg);
     }
     @media screen and (max-height: ${styles.mediaSize.tablet}) {
-        height: 80%;
+        height: 70%;
     }
 `;
 
@@ -37,21 +36,6 @@ const StyledPaddedDiv = Styled.div`
 
 const StyledPaddedAlbumDiv = Styled(StyledPaddedDiv)`
     flex: 2 1 0;
-`;
-
-const StyledBannerDiv = Styled.div`
-    ${css.centredFlexbox};
-`;
-
-const StyledHeadingDiv = Styled.div`
-    color: ${styles.colours.theme.primaryText};
-    padding-top: 4vh;
-    text-align: center;
-`;
-
-const StyledSubheadingDiv = Styled.div`
-    color: ${styles.colours.theme.primaryHighlight};
-    padding-top: ${styles.padding.xxxs};
 `;
 
 const StyledButtonDiv = Styled.div`
@@ -69,26 +53,6 @@ const AlbumCta = (props: IAlbumCtaProps) => {
     
     return (
         <StyledWrapperDiv id={id}>
-            {/* <StyledPaddedDiv>
-                <StyledBannerDiv>
-                    <StyledHeadingDiv>
-                        <Heading
-                            text={'LILLIAN ALBAZI'}
-                            type={'h1'}
-                            style={'h1'}
-                            fontFamily={'scheherazade'}
-                        />
-                    </StyledHeadingDiv>
-                    <StyledSubheadingDiv>
-                        <Heading
-                            text={'AFTER-IMAGE'}
-                            type={'h2'}
-                            style={'h2'}
-                            fontFamily={'scheherazade'}
-                        />
-                    </StyledSubheadingDiv>
-                </StyledBannerDiv>
-            </StyledPaddedDiv> */}
             <WrapperDiv>
                 <StyledPaddedAlbumDiv>
                     <AlbumFeature />
