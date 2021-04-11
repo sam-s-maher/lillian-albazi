@@ -24,9 +24,9 @@ class GigItem {
     date: string;
     dayName: string;
     text: string;
-    url: string;
+    url?: string;
 
-    constructor(date: string, dayName: string, text: string, url: string) {
+    constructor(date: string, dayName: string, text: string, url?: string) {
         this.date = date;
         this.dayName = dayName;
         this.text = text;
@@ -35,14 +35,14 @@ class GigItem {
 }
 
 const gigList: GigItem[] = [
-    new GigItem("26th June", "SAT", "Jazzlab, VIC", "https://jazzlab.club/1753-lillian-albazi-after-image-album-launch"),
-    new GigItem("4th July", "SUN", "Brisbane Jazz Club, QLD", "https://www.google.com"),
-    new GigItem("9th July", "FRI", "The Wharf, TAS", "https://www.google.com"),
-    new GigItem("10th July", "SAT", "Pablo's Cocktails and Dreams, TAS", "https://www.google.com"),
-    new GigItem("16th July", "FRI", "Bendigo Bank Theatre, VIC", "https://www.google.com"),
-    new GigItem("23rd July", "FRI", "National Press Club, ACT", "https://www.google.com"),
-    new GigItem("24th July", "SAT", "Music Lounge, Merrigong Theatre, NSW", "https://www.google.com"),
-    new GigItem("25th July", "SUN", "Molly, ACT", "https://www.google.com"),
+    new GigItem("26th June", "SAT", "Jazzlab, VIC", null),
+    new GigItem("4th July", "SUN", "Brisbane Jazz Club, QLD", null),
+    new GigItem("9th July", "FRI", "The Wharf, TAS", null),
+    new GigItem("10th July", "SAT", "Pablo's Cocktails and Dreams, TAS", null),
+    new GigItem("16th July", "FRI", "Bendigo Bank Theatre, VIC", null),
+    new GigItem("23rd July", "FRI", "National Press Club, ACT", null),
+    new GigItem("24th July", "SAT", "Music Lounge, Merrigong Theatre, NSW", null),
+    new GigItem("25th July", "SUN", "Molly, ACT", null),
     new GigItem("7th August", "SAT", "Nineteen Ten, SA", "https://www.eventbrite.com.au/e/lillian-albazi-after-image-album-tour-tickets-149809260531"),
     new GigItem("8th August", "SUN", "Nineteen Ten, SA", "https://www.eventbrite.com.au/e/lillian-albazi-after-image-album-tour-tickets-149809260531"),
 ];

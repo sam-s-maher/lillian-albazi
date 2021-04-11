@@ -42,6 +42,7 @@ interface IStyledItemContentDivProps {
     backgroundColour?: string;
     fontWeight?: string;
     fontSize?: string;
+    hasTicketLink?: boolean;
 }
 
 const StyledItemContentDiv = Styled.div`
@@ -61,15 +62,17 @@ const StyledItemButtonDiv = Styled(StyledItemContentDiv)`
     ${css.centredFlexbox}
     min-height: 50px;
     min-width: 70px;
-    cursor: pointer;
+    ${(props: IStyledItemContentDivProps) => props.hasTicketLink && 'cursor: pointer;'}
     transition: font-size ${styles.transitionTime.fastest};
     padding: 0 ${styles.padding.xxxxs};
+    ${(props: IStyledItemContentDivProps) => !props.hasTicketLink && `background-color: ${styles.colours.base.lightGrey};`}
+    ${(props: IStyledItemContentDivProps) => !props.hasTicketLink && `color: ${styles.colours.base.darkGrey};`}
     &:hover {
-        font-size: 110%;
+        ${(props: IStyledItemContentDivProps) => props.hasTicketLink && 'font-size: 110%;'}
     }
     @media screen and (max-width: ${styles.mediaSize.phoneSmall}) {
-        font-size: ${styles.fontSize.small};
-        padding: 0;
+        ${(props: IStyledItemContentDivProps) => props.hasTicketLink && `font-size: ${styles.fontSize.small}`}
+        ${(props: IStyledItemContentDivProps) => props.hasTicketLink && 'padding: 0;'}
     }
 `;
 
@@ -88,7 +91,7 @@ interface IGigListItemProps {
     date: string;
     dayName: string;
     text: string;
-    url: string;
+    url?: string;
     buttonText?: string;
 }
 
@@ -101,7 +104,8 @@ const GigListItem = (props: IGigListItemProps) => {
         url
     } = props;
 
-    var buttonTextToDisplay = buttonText || (url ? "Tickets" : "Soon");
+    var hasTicketLink = !!url;
+    var buttonTextToDisplay = buttonText || (hasTicketLink ? "Tickets" : "Soon");
 
     return (
         <StyledGigListItemDiv>
@@ -125,7 +129,8 @@ const GigListItem = (props: IGigListItemProps) => {
                     <a href={url}>
                         <StyledItemButtonDiv
                             colour={styles.colours.theme.tertiaryText}
-                            backgroundColour={styles.colours.theme.tertiaryBase}>
+                            backgroundColour={styles.colours.theme.tertiaryBase}
+                            hasTicketLink={hasTicketLink}>
                             {buttonTextToDisplay}
                         </StyledItemButtonDiv>
                     </a>
