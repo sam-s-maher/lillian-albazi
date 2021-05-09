@@ -19,14 +19,12 @@ const StyledContactDiv = Styled.div`
     ${css.centredFlexbox};
     flex-direction: row;
     align-items: flex-start;
+    width: 100%;
     max-width: ${styles.mediaSize.tablet};
-    justify-content: space-around;
+    justify-content: space-between;
     @media screen and (max-width: ${styles.mediaSize.tablet}) {
         flex-direction: column;
         align-items: center;
-    }
-    @media screen and (max-width: ${styles.mediaSize.desktopWide}) {
-        max-width: ${styles.mediaSize.desktop};
     }
 `;
 
@@ -37,12 +35,11 @@ interface IStyledSectionDivProps {
 
 const StyledSectionDiv = Styled.div`
     ${css.centredFlexbox};
-    flex: 1 1 0;
-    padding: 0 ${styles.padding.l};
-    margin: 0 ${styles.margin.s};
-    max-width: 80%;
+    /* flex: 1 1 0; */
+    width: 250px;
     @media screen and (max-width: ${styles.mediaSize.tablet}) {
         order: ${(props: IStyledSectionDivProps) => (props.tabletFlexOrder ||  props.flexOrder)};
+        max-width: 80%;
     }
 `;
 
