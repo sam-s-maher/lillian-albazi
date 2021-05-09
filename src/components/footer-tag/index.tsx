@@ -20,7 +20,7 @@ interface IFooterTagProps {}
 const FooterTag = (props: IFooterTagProps) => {
     return (
         <StyledContactDiv>
-            <StyledTagText>website by <a href="https://www.linkedin.com/in/samuelsmaher">sam</a> and lil</StyledTagText>
+            <StyledTagText>website by <a href="https://www.linkedin.com/in/samuelsmaher">sam</a></StyledTagText>
         </StyledContactDiv>
     )
 };
