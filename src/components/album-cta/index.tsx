@@ -6,6 +6,7 @@ import { css } from "styles/styled-css";
 import AlbumFeature from "components/album-feature";
 import CtaButton from "components/cta-button";
 import BackgroundImage from "images/background-image-2560.jpg";
+import { SocialsUrls } from "components/socials-list/socials-urls";
 
 const StyledWrapperDiv = Styled.div`
     ${css.centredFlexbox};
@@ -59,9 +60,11 @@ const AlbumCta = (props: IAlbumCtaProps) => {
                 </StyledPaddedAlbumDiv>
                 <StyledPaddedDiv>
                     <StyledButtonDiv>
-                        <CtaButton
+                        <a href={SocialsUrls.Websites.Bandcamp}>
+                            <CtaButton
                                 text={'ORDER HERE'}
-                        />
+                            />
+                        </a>
                     </StyledButtonDiv>
                 </StyledPaddedDiv>
             </WrapperDiv>

@@ -1,5 +1,5 @@
 const Websites = {
-    Bandcamp: "lillianalbazi.bandcamp.com",
+    Bandcamp: "https://lillianalbazi.bandcamp.com/",
     Spotify: "",
     Youtube: "https://www.youtube.com/watch?v=pNuAATWnuSU",
     Facebook: "https://www.facebook.com/Lillian-Albazi-231807707204525/",

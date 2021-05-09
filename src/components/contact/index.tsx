@@ -19,11 +19,14 @@ const StyledContactDiv = Styled.div`
     ${css.centredFlexbox};
     flex-direction: row;
     align-items: flex-start;
-    max-width: 700px;
+    max-width: ${styles.mediaSize.tablet};
     justify-content: space-around;
     @media screen and (max-width: ${styles.mediaSize.tablet}) {
         flex-direction: column;
         align-items: center;
+    }
+    @media screen and (max-width: ${styles.mediaSize.desktopWide}) {
+        max-width: ${styles.mediaSize.desktop};
     }
 `;
 
@@ -35,8 +38,8 @@ interface IStyledSectionDivProps {
 const StyledSectionDiv = Styled.div`
     ${css.centredFlexbox};
     flex: 1 1 0;
-    padding: 0 ${styles.padding.xxs};
-    margin: 0 ${styles.margin.m};
+    padding: 0 ${styles.padding.l};
+    margin: 0 ${styles.margin.s};
     max-width: 80%;
     @media screen and (max-width: ${styles.mediaSize.tablet}) {
         order: ${(props: IStyledSectionDivProps) => (props.tabletFlexOrder ||  props.flexOrder)};
@@ -106,16 +109,6 @@ const Contact = (props: IContactProps) => {
     return (
         <StyledContactBackgroundDiv id={id}>
             <StyledContactDiv>
-                {/* <StyledSectionDiv flexOrder={1}>
-                    <StyledHeadingDiv>
-                        <Heading text={"Bookings"} type={"h3"} style={"h3"}/>
-                    </StyledHeadingDiv>
-                    <StyledContentDiv>
-                        <StyledEmailDiv>
-                            <a href={"mailto:" + SocialsUrls.Email} target="_blank"><u>albazi.music@gmail.com</u></a>
-                        </StyledEmailDiv>
-                    </StyledContentDiv>
-                </StyledSectionDiv> */}
                 <StyledSectionDiv flexOrder={2} tabletFlexOrder={-1}>
                     <StyledHeadingDiv>
                         <Heading text={"Social"} type={"h3"} style={"h3"} />
