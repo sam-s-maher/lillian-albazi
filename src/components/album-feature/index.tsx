@@ -24,6 +24,7 @@ const StyledAlbumDiv = Styled.div`
 const StyledAlbumImg = Styled(StyledImg)`
     height: 100%;
     width: auto;
+    max-width: none;
     max-height: 100vw;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
     z-index: 2;
@@ -33,7 +34,7 @@ const StyledDiscImage = Styled.img`
     position: absolute;
     top: 2.5%;
     height: 100%;
-    width: 100%;
+    width: auto;
     transition-duration: ${styles.transitionTime.normal};
     z-index: 1;
 `;
