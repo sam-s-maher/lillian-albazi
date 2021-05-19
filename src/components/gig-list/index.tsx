@@ -65,9 +65,7 @@ const GigList = (props: IGigListProps) => {
 
     useEffect(() => {
         async function getGigs() {
-            await new Promise(resolve => setTimeout(resolve, 1000))
             let gigs = await DataStore.query(Gig);
-            console.log(gigs)
 
             setState({ loading: false, gigs })
         }
