@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState, useEffect }  from "react";
 import Styled from "styled-components";
+import { DataStore } from "@aws-amplify/datastore";
+import { Gig } from "../../models";
 
 import { styles } from "styles/variables";
 import { css } from "styles/styled-css";
@@ -34,7 +36,7 @@ class GigItem {
     }
 }
 
-const gigList: GigItem[] = [
+const giggies: GigItem[] = [
     new GigItem("26th June", "SAT", "Jazzlab, VIC", "https://jazzlab.club/1753-lillian-albazi-after-image-album-launch"),
     new GigItem("9th July", "FRI", "The Wharf, TAS", null),
     new GigItem("10th July", "SAT", "Pablo's Cocktails and Dreams, TAS", null),
@@ -52,22 +54,44 @@ interface IGigListProps {
     id?: string;
 }
 
+interface IGigListState {
+    loading: boolean;
+    gigs: Gig[];
+}
+
 const GigList = (props: IGigListProps) => {
+    const [ state, setState ] = useState<IGigListState>({ loading: true, gigs: [] })
     const { id } = props;
+
+    useEffect(() => {
+        async function getGigs() {
+            await new Promise(resolve => setTimeout(resolve, 1000))
+            let gigs = await DataStore.query(Gig);
+            console.log(gigs)
+
+            setState({ loading: false, gigs })
+        }
+
+        getGigs()
+    }, []);
 
     return (
         <StyledGigListDiv id={id}>
-            <StyledListDiv>
-                <GigListItemHeader />
-                {gigList.map((item, i) =>
-                    <GigListItem
-                        key={i}
-                        date={item.date}
-                        dayName={item.dayName}
-                        text={item.text}
-                        url={item.url}
-                    />)}
-            </StyledListDiv>
+            {state.loading ? (
+                    <p>loading</p>
+                ) : (
+                    <StyledListDiv>
+                    <GigListItemHeader />
+                    {state.gigs.map((item, i) =>
+                        <GigListItem
+                            key={i}
+                            date={item.DateName}
+                            dayName={item.DayName}
+                            text={item.Location}
+                            url={item.Url}
+                        />)}
+                    </StyledListDiv>
+                )}
         </StyledGigListDiv>
     );
 }
