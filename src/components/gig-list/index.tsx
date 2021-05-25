@@ -39,7 +39,7 @@ const gigList: GigItem[] = [
     new GigItem("9th July", "FRI", "The Wharf, TAS", null),
     new GigItem("10th July", "SAT", "Pablo's Cocktails and Dreams, TAS", null),
     new GigItem("11th July", "SUN", "MONA, TAS", "https://mona.net.au/stuff-to-do"), 
-    new GigItem("16th July", "FRI", "Bendigo Bank Theatre, VIC", null),
+    new GigItem("16th July", "FRI", "Bendigo Bank Theatre, VIC", "https://boxoffice.gotix.com.au/WEBPAGES/EntaWebEvent/EventSBandPrices.aspx"),
     new GigItem("23rd July", "FRI", "National Press Club, ACT", null),
     new GigItem("24th July", "SAT", "Music Lounge, Merrigong Theatre, NSW", "https://merrigong.com.au/shows/lillian-albazi-after-image-album-launch/"),
     new GigItem("25th July", "SUN", "Molly, ACT", null),
