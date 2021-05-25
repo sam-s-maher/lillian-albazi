@@ -7,7 +7,7 @@ import { StyledGlobal } from "styles/styled-global";
 import { StyledFonts } from "styles/styled-fonts";
 import App from "components/app";
 
-import Amplify, { Auth } from 'aws-amplify';
+import Amplify from 'aws-amplify';
 import awsconfig from './aws-exports';
 Amplify.configure(awsconfig);
 
