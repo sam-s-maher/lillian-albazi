@@ -43,25 +43,31 @@ const GigList = (props: IGigListProps) => {
     const [ state, setState ] = useState<IGigListState>({ loading: true, gigDetails: [] })
     const { id } = props;
 
+    async function getGigs() {
+        const gigs = await DataStore.query(Gig);
+        
+        const gigDetails: GigDetails[] = gigs.map(function(gig) {
+            let gigMoment = moment(gig.DateTime)
+            return {
+                gig: gig,
+                moment: gigMoment,
+                dayName: gigMoment.format('ddd').toUpperCase(),
+                dateName: gigMoment.format('Do MMMM'),
+            }
+        }).sort((a, b) => a.moment.isAfter(b.moment) ? 1 : -1);
+
+        setState({ loading: false, gigDetails })
+    }
+
     useEffect(() => {
-        async function getGigs() {
-            const gigs = await DataStore.query(Gig);
-            
-            const gigDetails: GigDetails[] = gigs.map(function(gig) {
-                let gigMoment = moment(gig.DateTime)
-                return {
-                    gig: gig,
-                    moment: gigMoment,
-                    dayName: gigMoment.format('ddd').toUpperCase(),
-                    dateName: gigMoment.format('Do MMMM'),
-                }
-            }).sort((a, b) => a.moment.isAfter(b.moment) ? 1 : -1);
+        const subscription = DataStore.observe(Gig).subscribe(() => getGigs())
 
-            setState({ loading: false, gigDetails })
+        getGigs();
+
+        return () => {
+            subscription.unsubscribe()
         }
-
-        getGigs()
-    }, []);
+    }, [state]);
 
     return (
         <StyledGigListDiv id={id}>

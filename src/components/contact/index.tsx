@@ -94,17 +94,23 @@ const Contact = (props: IContactProps) => {
     const [ state, setState ] = useState<IContactState>({ loading: true, friendList: [] })
     const { id } = props;
 
+    async function getFriends() {
+        const friends = await DataStore.query(Friend);
+        
+        const friendList = friends.sort((a, b) => a.Index > b.Index ? 1 : -1);
+
+        setState({ loading: false, friendList })
+    }
+
     useEffect(() => {
-        async function getFriends() {
-            const friends = await DataStore.query(Friend);
-            
-            const friendList = friends.sort((a, b) => a.Index > b.Index ? 1 : -1);
+        const subscription = DataStore.observe(Friend).subscribe(() => getFriends())
 
-            setState({ loading: false, friendList })
+        getFriends();
+
+        return () => {
+            subscription.unsubscribe()
         }
-
-        getFriends()
-    }, []);
+    }, [state]);
 
     return (
         <StyledContactBackgroundDiv id={id}>
@@ -126,7 +132,7 @@ const Contact = (props: IContactProps) => {
                         <p>finding friends...</p>
                     ) : (
                         <FriendsUl>
-                        {state.friendList.map((item, i) => <FriendsLi key={i}><a href={item.Url}>{item.Name}</a></FriendsLi>)}
+                            {state.friendList.map((item, i) => <FriendsLi key={i}><a href={item.Url}>{item.Name}</a></FriendsLi>)}
                         </FriendsUl>
                     )}
                     </StyledContentDiv>
