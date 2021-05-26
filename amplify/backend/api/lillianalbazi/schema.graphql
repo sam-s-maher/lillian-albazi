@@ -2,6 +2,7 @@ type Friend @model @auth(rules: [{allow: public}]) {
   id: ID!
   Name: String
   Url: AWSURL
+  Index: Int
 }
 
 type Gig @model @auth(rules: [{allow: public}]) {
@@ -10,5 +11,6 @@ type Gig @model @auth(rules: [{allow: public}]) {
   Url: AWSURL
   DateName: String
   DayName: String
+  DateTime: AWSDateTime
 }
  
