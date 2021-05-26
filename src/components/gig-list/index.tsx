@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState, useEffect }  from "react";
 import Styled from "styled-components";
+import { DataStore } from "@aws-amplify/datastore";
+import { Gig } from "../../models";
+import moment, { Moment } from 'moment';
 
 import { styles } from "styles/variables";
 import { css } from "styles/styled-css";
@@ -20,54 +23,69 @@ const StyledListDiv = Styled.div`
     padding: ${styles.padding.s} 0;
 `;
 
-class GigItem {
-    date: string;
+interface GigDetails {
+    gig: Gig;
+    moment: Moment;
     dayName: string;
-    text: string;
-    url?: string;
-
-    constructor(date: string, dayName: string, text: string, url?: string) {
-        this.date = date;
-        this.dayName = dayName;
-        this.text = text;
-        this.url = url;
-    }
+    dateName: string;
 }
-
-const gigList: GigItem[] = [
-    new GigItem("26th June", "SAT", "Jazzlab, VIC", "https://jazzlab.club/1753-lillian-albazi-after-image-album-launch"),
-    new GigItem("9th July", "FRI", "The Wharf, TAS", null),
-    new GigItem("10th July", "SAT", "Pablo's Cocktails and Dreams, TAS", null),
-    new GigItem("11th July", "SUN", "MONA, TAS", "https://mona.net.au/stuff-to-do"), 
-    new GigItem("16th July", "FRI", "Bendigo Bank Theatre, VIC", "https://boxoffice.gotix.com.au/WEBPAGES/EntaWebEvent/EventSBandPrices.aspx"),
-    new GigItem("23rd July", "FRI", "National Press Club, ACT", null),
-    new GigItem("24th July", "SAT", "Music Lounge, Merrigong Theatre, NSW", "https://merrigong.com.au/shows/lillian-albazi-after-image-album-launch/"),
-    new GigItem("25th July", "SUN", "Molly, ACT", null),
-    new GigItem("7th August", "SAT", "Nineteen Ten, SA", null),
-    new GigItem("8th August", "SUN", "Nineteen Ten, SA", "https://www.eventbrite.com.au/e/lillian-albazi-after-image-album-tour-tickets-149809260531"),
-    new GigItem("14th August", "SAT", "Brisbane Jazz Club, QLD", null),
-];
 
 interface IGigListProps {
     id?: string;
 }
 
+interface IGigListState {
+    loading: boolean;
+    gigDetails: GigDetails[];
+}
+
 const GigList = (props: IGigListProps) => {
+    const [ state, setState ] = useState<IGigListState>({ loading: true, gigDetails: [] })
     const { id } = props;
+
+    async function getGigs() {
+        const gigs = await DataStore.query(Gig);
+        
+        const gigDetails: GigDetails[] = gigs.map(function(gig) {
+            let gigMoment = moment(gig.DateTime)
+            return {
+                gig: gig,
+                moment: gigMoment,
+                dayName: gigMoment.format('ddd').toUpperCase(),
+                dateName: gigMoment.format('Do MMMM'),
+            }
+        }).sort((a, b) => a.moment.isAfter(b.moment) ? 1 : -1);
+
+        setState({ loading: false, gigDetails })
+    }
+
+    useEffect(() => {
+        const subscription = DataStore.observe(Gig).subscribe(() => getGigs())
+
+        getGigs();
+
+        return () => {
+            subscription.unsubscribe()
+        }
+    }, [state]);
 
     return (
         <StyledGigListDiv id={id}>
-            <StyledListDiv>
-                <GigListItemHeader />
-                {gigList.map((item, i) =>
-                    <GigListItem
-                        key={i}
-                        date={item.date}
-                        dayName={item.dayName}
-                        text={item.text}
-                        url={item.url}
-                    />)}
-            </StyledListDiv>
+            {state.loading ? (
+                    <p>loading</p>
+                ) : (
+                    <StyledListDiv>
+                    <GigListItemHeader />
+                    {state.gigDetails.map((item, i) =>
+                        <GigListItem
+                            key={i}
+                            date={item.dateName}
+                            dayName={item.dayName}
+                            text={item.gig.Location}
+                            url={item.gig.Url}
+                        />)}
+                    </StyledListDiv>
+                )}
         </StyledGigListDiv>
     );
 }
