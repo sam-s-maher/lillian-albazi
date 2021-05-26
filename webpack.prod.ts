@@ -17,6 +17,7 @@ const config: Webpack.Configuration = {
     },
     resolve: {
         extensions: [
+            ".mjs",
             ".ts",
             ".tsx",
             ".js",
@@ -31,6 +32,10 @@ const config: Webpack.Configuration = {
     },
     module: {
         rules: [
+            {
+                test: /\.mjs$/,
+                type: "javascript/auto",
+            },
             { 
                 test: /\.tsx$/,
                 loader: "awesome-typescript-loader"

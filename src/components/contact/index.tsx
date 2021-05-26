@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState, useEffect }  from "react";
 import Styled from "styled-components";
+import { DataStore } from "@aws-amplify/datastore";
 
 import { css } from "styles/styled-css";
 import { styles } from "styles/variables";
 import Heading from "components/heading";
 import SocialsList from "components/socials-list";
 import ContactBackground from "images/contact-background-1024.jpg";
+import { Friend } from "../../models";
 
 const StyledContactBackgroundDiv = Styled.div`
     ${css.centredFlexbox};
@@ -79,29 +81,36 @@ const FriendsLi = Styled.li`
     }
 `;
 
-const friendsList: any = {
-    "Great ~ Falls": "https://greatfallsaus.bandcamp.com/",
-    "Robert Albazi": "https://www.robertalbazi.com/",
-    "Kade Brown": "https://kadebrown.bandcamp.com/album/frictions",
-    "Shaun Rammers": "https://shaunrammers.net/",
-    "Oscar Neyland": "https://www.oscarneylandmusic.com/",
-    "Tom Allen-Graham": "https://tomallen-graham.bandcamp.com/",
-    "Holly Moore": "https://www.hollymooremusic.com/about"
-};
-
-const friendsListItems = () => {
-    return Object.keys(friendsList).map((key) => {
-        const friendUrl = friendsList[key];
-        return <FriendsLi key={key}><a href={friendUrl}>{key}</a></FriendsLi>;
-    })
-}
-
 interface IContactProps {
     id?: string;
 }
 
+interface IContactState {
+    loading: boolean;
+    friendList: Friend[];
+}
+
 const Contact = (props: IContactProps) => {
+    const [ state, setState ] = useState<IContactState>({ loading: true, friendList: [] })
     const { id } = props;
+
+    async function getFriends() {
+        const friends = await DataStore.query(Friend);
+        
+        const friendList = friends.sort((a, b) => a.Index > b.Index ? 1 : -1);
+
+        setState({ loading: false, friendList })
+    }
+
+    useEffect(() => {
+        const subscription = DataStore.observe(Friend).subscribe(() => getFriends())
+
+        getFriends();
+
+        return () => {
+            subscription.unsubscribe()
+        }
+    }, [state]);
 
     return (
         <StyledContactBackgroundDiv id={id}>
@@ -119,9 +128,13 @@ const Contact = (props: IContactProps) => {
                         <Heading text={"Friends"} type={"h3"} style={"h3"} />
                     </StyledHeadingDiv>
                     <StyledContentDiv>
+                    {state.loading ? (
+                        <p>finding friends...</p>
+                    ) : (
                         <FriendsUl>
-                            {friendsListItems()}
+                            {state.friendList.map((item, i) => <FriendsLi key={i}><a href={item.Url}>{item.Name}</a></FriendsLi>)}
                         </FriendsUl>
+                    )}
                     </StyledContentDiv>
                 </StyledSectionDiv>
             </StyledContactDiv>
