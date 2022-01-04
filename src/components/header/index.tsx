@@ -101,7 +101,6 @@ const StyledEmailIcon = Styled(FontAwesomeIcon)`
 
 const StyledHeading = Styled(Heading)`
     font-size: 32px;
-    margin-bottom: -6px;
 `;
 
 interface IHeaderProps {}
