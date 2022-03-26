@@ -5,6 +5,7 @@ import AlbumCta from "components/album-cta";
 import GigList from "components/gig-list";
 import Contact from "components/contact";
 import FooterTag from "components/footer-tag";
+import ArticleQuote from "components/article-quote";
 
 export interface IAppProps {}
 

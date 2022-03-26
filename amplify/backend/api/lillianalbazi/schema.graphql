@@ -1,3 +1,11 @@
+type Quote @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Text: String
+  Attribution: String
+  ShowOnMobile: Boolean
+  Order: Int
+}
+
 type Friend @model @auth(rules: [{allow: public}]) {
   id: ID!
   Name: String
