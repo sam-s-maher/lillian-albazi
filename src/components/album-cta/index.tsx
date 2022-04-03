@@ -23,6 +23,8 @@ const StyledWrapperDiv = Styled.div`
 const WrapperDiv = Styled.div`
     ${css.centredFlexbox};
     height: 75%;
+    width: 100%;
+    max-width: ${styles.mediaSize.desktopWide};
     :hover .disc-image {
         transform: translateX(35%) rotate(20deg);
     }
@@ -40,6 +42,7 @@ const StyledPaddedDiv = Styled.div`
 
 const StyledPaddedAlbumDiv = Styled(StyledPaddedDiv)`
     flex: 2 1 0;
+    width: 100%;
 `;
 
 const StyledButtonDiv = Styled.div`

@@ -15,6 +15,7 @@ const StyledAlbumFeatureDiv = Styled.div`
     ${css.centredFlexbox};
     flex-flow: row nowrap;
     align-items: flex-start;
+    width: 100%;
     height: 100%;
     color: ${styles.colours.theme.primaryText};
 `;
